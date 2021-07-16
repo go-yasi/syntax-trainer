@@ -1,0 +1,50 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Snippet extends Model {}
+
+Snippet.init(
+  {
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    code: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    language: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    collection_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'collection',
+            key: 'id'
+        }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
+    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'snippet'
+  }
+);
+
+module.exports = Snippet;

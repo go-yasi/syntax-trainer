@@ -47,7 +47,7 @@ User.init(
             key: 'id'
         }
     },
-    sscore_id: {
+    score_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'score',

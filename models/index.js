@@ -3,26 +3,21 @@ const Snippet = require('./Snippet');
 const Collection = require('./Collection');
 const Score = require('./Score');
 
-/////////////////
-// User and Score
-User.hasMany(Score, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+
+User.belongsToMany(Snippet, {
+    through: {
+        model: Score,
+        unique: false
+    },
+    as: 'user_score'
 });
 
-Score.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-
-////////////////////
-// Snippet and Score — SHOULD THIS RELATIONSHIP USE A THROUGH? OR ESTABLISH RELATIONSHIP FOR A THROUGH ABOVE?
-Snippet.hasOne(Score, {
-    
-});
-
-Score.belongsTo(Snippet, {
-    
+Snippet.belongsToMany(User, {
+    through: {
+        model: Score,
+        unique: false
+    },
+    as: 'user_snippet'
 });
 
 

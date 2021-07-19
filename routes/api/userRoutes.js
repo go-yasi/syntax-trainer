@@ -82,7 +82,19 @@ async (req, res) => {
     }
 });
 
-// UPDATE to update high_score (make call to all scores by user)
+// UPDATE to update high_score (make call to all scores by user) — PROBABLY DON'T NEED THIS?
+// router.put('/:id', async (req, res) => {
+//     try {
+//         const userData = await User.update(req.body, 
+//             { where: { id: req.params.id }});
+//         if (!userData) {
+//             res.status(400).json({ message: "No user with this ID!"});
+//             return;
+//         }
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 
 module.exports = router;

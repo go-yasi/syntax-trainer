@@ -14,11 +14,12 @@ router.get('/', async (req, res) => {
 // GET snippet by user
 router.get('/user/:id', async (req, res) => {
     try {
-      const snippetData = await Snippet.findByPk({
+      const snippetData = await Snippet.findByPk(req.params.id, {
           includes: [{ model: User }]
       });
       res.status(200).json(snippetData);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
 });

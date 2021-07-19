@@ -8,6 +8,6 @@ const scoreRoutes = require('./scoreRoutes');
 router.use('/users', userRoutes);
 router.use('/snippet', snippetRoutes);
 router.use('/collection', collectionRoutes);
-router.use('./score', scoreRoutes);
+router.use('/score', scoreRoutes);
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Snippet, User } = require('../../models');
+const { Snippet, User, Score } = require('../../models');
 
 // GET snippet by collection_id
 router.get('/', async (req, res) => {
@@ -11,11 +11,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET snippet by user
-router.get('/user/:id', async (req, res) => {
+// GET snippet by id
+router.get('/:id', async (req, res) => {
     try {
       const snippetData = await Snippet.findByPk(req.params.id, {
-          includes: [{ model: User }]
+          include: [{ model: User}]
       });
       res.status(200).json(snippetData);
     } catch (err) {
@@ -49,5 +49,19 @@ router.delete('/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+// GET all snippets by user id
+router.get('/user/:id', async (req, res) => {
+    try {
+      const snippetData = await Snippet.findAll({
+          //include: [{ model: User}],
+          where: {user_id: req.params.id}
+      });
+      res.status(200).json(snippetData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
 
 module.exports = router;

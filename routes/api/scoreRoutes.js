@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
 });
 
 // GET to get all scores by user (map through to get highest score)
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const scoreData = await Score.findAll({
             where: {snippet_id: req.params.id},

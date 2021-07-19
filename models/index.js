@@ -17,13 +17,14 @@ Snippet.belongsToMany(User, {
         model: Score,
         unique: false
     },
-    as: 'user_snippet'
+    as: 'user_score'
 });
 
 
 /////////////////////////
 // Snippet and Collection
-Snippet.belongsToMany(Collection, {
+
+Snippet.belongsTo(Collection, {
     foreignKey: 'collection_id'
 });
 

@@ -39,20 +39,6 @@ User.init(
     avatar: {
         type: DataTypes.STRING,
         allowNull: true
-    },
-    snippet_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'snippet',
-            key: 'id'
-        }
-    },
-    score_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'score',
-            key: 'id'
-        }
     }
   },
   {

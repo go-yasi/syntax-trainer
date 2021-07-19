@@ -18,13 +18,6 @@ Collection.init(
     homepage: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-    },
-    snippet_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'snippet',
-            key: 'id'
-        }
     }
   },
   {

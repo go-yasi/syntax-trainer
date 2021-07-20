@@ -8,12 +8,14 @@ import Collection from "./pages/Collection";
 import Snippet from "./pages/Snippet";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
@@ -23,6 +25,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

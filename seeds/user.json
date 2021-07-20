@@ -1,0 +1,43 @@
+[
+    {
+      "username": "Yasi",
+      "password": "password123",
+      "bio": "Styling master"
+    },
+    {
+        "username": "Tai",
+        "password": "password123",
+        "bio": "Always finds the missing comma"
+      
+    },
+    {
+        "username": "Josh",
+        "password": "password123",
+        "bio": "Likes to code javascript in C++"
+     
+    },
+    {
+        "username": "Tom",
+        "password": "password123",
+        "bio": "Always waiting on his computer to respond"
+    
+    },
+    {
+        "username": "Sal",
+        "password": "password123",
+        "bio": "Looks forward to checking his hotmail account"
+     
+    },
+    {
+        "username": "Lernantino",
+        "password": "password123",
+        "bio": "Wishes Sal would stop emailing him"
+    
+    },
+    {
+        "username": "Amiko",
+        "password": "password123",
+        "bio": "Wonders why she is here"
+    
+    }
+]

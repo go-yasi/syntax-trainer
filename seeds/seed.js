@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
 const { Collection, Score, Snippet, User } = require('../models');
 
+// const snippetSeed = require('./snippet.json');
 const collectionSeed = require('./collection.json');
 const userSeed = require('./user.json');
-// const snippetSeed = require('./snippet.json');
 const scoreSeed = require('./score.json');
 
 const seedDatabase = () => {

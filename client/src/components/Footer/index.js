@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer">
-      <ul className="footer-links">
-          <li>
-              <Link
-              className={window.location === "https://github.com/go-yasi/syntax-trainer"}
-              >
-              GitHub Repo
-              </Link>
-          </li>
-      </ul>
+      <img className="" src="" alt=""></img>
+      <span>
+          <Link
+          className={window.location === "https://github.com/go-yasi/syntax-trainer"}
+          >
+          GitHub Repo
+          </Link>
+      </span>
+      <img className="" src="" alt=""></img>
     </footer>
   );
 }

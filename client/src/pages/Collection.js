@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import SnippetCard from "../components/SnippetCard";
 
 class Collection extends Component {
     render() {
+        
         return (
-            <h1>Cool Collection</h1>
+            <div>
+                <h1>Cool Collection</h1>
+                <SnippetCard />
+                <SnippetCard />
+                <SnippetCard />
+                <SnippetCard />
+            </div>
         );
+        
     }
 }
 

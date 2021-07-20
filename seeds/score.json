@@ -1,28 +1,28 @@
 [
     {
-      "value": "100",
-      "snippet_id": "1",
-      "user_id": "1"  
+      "value": 100,
+      "snippet_id": 1,
+      "user_id": 1 
     },
     {
-      "value": "150",
-      "snippet_id": "1",
-      "user_id": "2"  
+      "value": 150,
+      "snippet_id": 1,
+      "user_id": 2
     },
     {
-      "value": "200",
-      "snippet_id": "2",
-      "user_id": "3"  
+      "value": 200,
+      "snippet_id": 2,
+      "user_id": 3 
     },
     {
-      "value": "250",
-      "snippet_id": "2",
-      "user_id": "3"  
+      "value": 250,
+      "snippet_id": 2,
+      "user_id": 3
     },
     {
-      "value": "300",
-      "snippet_id": "3",
-      "user_id": "1"  
+      "value": 300,
+      "snippet_id": 3,
+      "user_id": 1 
     }
   
 ]

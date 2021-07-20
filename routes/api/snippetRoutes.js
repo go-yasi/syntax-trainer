@@ -78,8 +78,8 @@ router.post('/seed', (req, res) => {
       <input type="submit" value="Submit">
       </form>`,
      language: "HTML",
-     collection_id: "1",
-     user_id: "1"
+     collection_id: 1,
+     user_id: 1
     },
     {
       title: "Forms",
@@ -94,8 +94,8 @@ router.post('/seed', (req, res) => {
       <input type="submit" value="Submit">
     </form>`,
      language: "HTML",
-     collection_id: "1",
-     user_id: "2"
+     collection_id: 1,
+     user_id: 2
     },
     {
       title: "Forms",
@@ -115,8 +115,8 @@ router.post('/seed', (req, res) => {
       <p><input id="btn" type="button" value="How many are selected?" /></p>
     </form>`,
      language: "HTML",
-     collection_id: "1",
-     user_id: "3"
+     collection_id: 1,
+     user_id: 3
     },
     {
       title: "Lists",
@@ -127,8 +127,8 @@ router.post('/seed', (req, res) => {
       <li>Milk</li>
     </ol>`,
      language: "HTML",
-     collection_id: "1",
-     user_id: "4"
+     collection_id: 1,
+     user_id: 4
     },
     {
       title: "Lists",
@@ -143,8 +143,8 @@ router.post('/seed', (req, res) => {
     </section>
 `,
      language: "HTML",
-     collection_id: "1",
-     user_id: "5"
+     collection_id: 1,
+     user_id: 5
     },
     {
       title: "Lists",
@@ -160,8 +160,8 @@ router.post('/seed', (req, res) => {
       </ul>
       <section>`,
      language: "HTML",
-     collection_id: "1",
-     user_id: "6"
+     collection_id: 1,
+     user_id: 6
     },
     {
       title: "CSS Styling",
@@ -194,8 +194,8 @@ router.post('/seed', (req, res) => {
           background-color: orange;
         }`,
      language: "CSS",
-     collection_id: "2",
-     user_id: "7"
+     collection_id: 2,
+     user_id: 7
     },
     {
       title: "Switch Case",
@@ -213,8 +213,8 @@ router.post('/seed', (req, res) => {
               darkOrLight = "Unknown";
       }`,
      language: "JAVASCRIPT",
-     collection_id: "3",
-     user_id: "1"
+     collection_id: 3,
+     user_id: 1
     },
     {
       title: "Switch Case",
@@ -242,8 +242,8 @@ router.post('/seed', (req, res) => {
             day = "Saturday";
         }`,
      language: "JAVASCRIPT",
-     collection_id: "3",
-     user_id: "2"
+     collection_id: 3,
+     user_id: 2
     },
     {
       title: "For In",
@@ -256,8 +256,8 @@ router.post('/seed', (req, res) => {
       function myFunction(value) {
         txt += value;`,
      language: "JAVASCRIPT",
-     collection_id: "3",
-     user_id: "3"
+     collection_id: 3,
+     user_id: 3
     },
     {
       title: "For Loop",
@@ -271,8 +271,8 @@ router.post('/seed', (req, res) => {
         i++;
       }`,
      language: "JAVASCRIPT",
-     collection_id: "3",
-     user_id: "4"
+     collection_id: 3,
+     user_id: 4
     },
     {
       title: "For Loop",
@@ -283,8 +283,8 @@ router.post('/seed', (req, res) => {
           return total;
         }`,
      language: "JAVASCRIPT",
-     collection_id: "3",
-     user_id: "5"
+     collection_id: 3,
+     user_id: 5
     },
     {
       title: "Media Queries",
@@ -308,8 +308,8 @@ router.post('/seed', (req, res) => {
         }
         `,
      language: "CSS",
-     collection_id: "2",
-     user_id: "1"
+     collection_id: 2,
+     user_id: 1
     },
   ])
     .then(() => {

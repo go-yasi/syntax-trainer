@@ -8,16 +8,16 @@ const scoreSeed = require('./score.json');
 
 const seedDatabase = () => {
     return sequelize.sync({ force: true }).then(() => {
-      Collection.bulkCreate(collectionSeed).then(() => {
-        User.bulkCreate(userSeed).then(() => {
-            // Snippet.bulkCreate(snippetSeed).then(() => {
+        Collection.bulkCreate(collectionSeed).then(() => {
+            User.bulkCreate(userSeed).then(() => {
+                // Snippet.bulkCreate(snippetSeed).then(() => {
                 Score.bulkCreate(scoreSeed).then(() => {
-          console.log('All Seeds Planted');
+                    console.log('All Seeds Planted');
+                });
+            });
         });
-      });
     });
-});
-    };
+};
 
 
 

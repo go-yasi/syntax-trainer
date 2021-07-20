@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Snippet = require('../../models/Snippet');
+const Snippet = require('../models/Snippet');
 
 
 router.post('/seed', (req, res) => {

@@ -14,7 +14,6 @@ router.post('/', async (req, res) => {
 });
 
 // GET to get all scores by user (map through to get highest score)
-
 router.get('/snippet/:id', async (req, res) => {
     try {
         const scoreData = await sequelize.query(

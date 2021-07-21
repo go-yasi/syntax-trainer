@@ -1,11 +1,11 @@
 import React from "react";
 
-function SnippetCard() {
+function SnippetCard(props) {
     return(
         <div>
-            <h2>Snippet name</h2>
-            <p>language</p>
-            <p>description of snippet---description of snippet---description of snippet---description of snippet---description of snippet</p>
+            <h2>{props.title}</h2>
+            <p>{props.language}</p>
+            <p>{props.description}</p>
         </div>
     )
 }

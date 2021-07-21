@@ -1,10 +1,10 @@
 import React from "react";
 
-function CollectionCard() {
+function CollectionCard(props) {
     return(
         <div>
-            <h2>Collection name</h2>
-            <p>length of collection</p>
+            <h2>{props.title}</h2>
+            <p>{props.length}</p>
          </div>
     )
 }

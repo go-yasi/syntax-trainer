@@ -13,7 +13,7 @@ function Snippet() {
       }, []);
 
     function loadSnippets() {
-        API.fetchSnippet()
+        API.fetchSnippet(10)
           .then(res =>{
               setSnippet(res.data);
               console.log(res.data);

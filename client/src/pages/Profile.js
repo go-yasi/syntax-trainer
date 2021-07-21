@@ -5,13 +5,14 @@ import SnippetCard from "../components/SnippetCard";
 import API from "../utils/API"
 
 function Profile() {
-    const [profile, setProfile] = useState({
-        score: [],
-        users: {}
-    });
+    const [profile, setProfile] = useState({});
+    const [score, setScore] = useState({});
 
     useEffect(() => {
-        loadAll();
+        loadProfile();
+    }, []);
+    useEffect(() => {
+        loadScores();
     }, []);
 
     useEffect(() => {
@@ -21,7 +22,7 @@ function Profile() {
     function loadProfile(id){
         API.fetchUser(1)
             .then(res =>{
-                setProfile({...profile, users:res.data});
+                setProfile(res.data);
                 console.log(res.data);
             })
             .catch(err => console.log(err));
@@ -29,33 +30,35 @@ function Profile() {
     function loadScores(id){
         API.fetchUserScores(1)
             .then(res =>{
-                setProfile({...profile, score:res.data});
+                setScore(res.data);
                 console.log(res.data);
             })
             .catch(err => console.log(err));
     }
-    async function loadAll(){
-        const load = await loadProfile();
-        const load2 = await loadScores();
-        // console.log(load);
-    }
+    // async function loadAll(){
+    //     // const load = await loadProfile();
+    //     // const load2 = await loadScores();
+    //     console.log(await loadProfile());
+    //     console.log(await loadScores());
+    // }
     
     return (
         <div>
             <h1>Cool Profile</h1>
-                {profile.users ? (
+                {profile.username ? (
                     <div>
-                        <UserCard username={profile.users.username} bio={profile.users.bio} avatar={profile.users.avatar}/>
+                        {/* <UserCard username={'Tai'} bio={'Taitai'} avatar={profile.users.avatar}/> */}
+                        <UserCard username={profile.username} bio={profile.bio} avatar={profile.avatar}/>
                     </div>
                 ):(
                     <div>
                         Loading Bios
                     </div>
                 )}
-                {profile.score.length ? (
+                {score.length ? (
                     <div>
-                        <ProfileScoreCard snippet={profile.score[0].snippet_id} value={profile.score[0].value}/>
-                        <ProfileScoreCard snippet={profile.score[1].snippet_id} value={profile.score[1].value}/>
+                        <ProfileScoreCard snippet={score[0].snippet_id} value={score[0].value}/>
+                        <ProfileScoreCard snippet={score[1].snippet_id} value={score[1].value}/>
                     </div>
                 ):(
                     <div>

@@ -13,26 +13,40 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET to get all scores by user (map through to get highest score)
+// GET to get all scores by snippet
 router.get('/snippet/:id', async (req, res) => {
-    try {
-        const scoreData = await sequelize.query(
-            `SELECT * FROM snippet
-            INNER JOIN user ON user.id=snippet.user_id
-            INNER JOIN score ON score.user_id=user.id
-            WHERE snippet.id = ?`,
-            {
-              replacements: [req.params.id],
-              type: QueryTypes.SELECT
-            }
-          );
-        
-        res.status(200).json(scoreData);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-  });
+  try {
+      const scoreData = await sequelize.query(
+          `SELECT * FROM snippet
+          INNER JOIN user ON user.id=snippet.user_id
+          INNER JOIN score ON score.user_id=user.id
+          WHERE snippet.id = ?`,
+          {
+            replacements: [req.params.id],
+            type: QueryTypes.SELECT
+          }
+        );
+      
+      res.status(200).json(scoreData);
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+  }
+});
+
+// GET to get all scores by user
+router.get('/user/:id', async (req, res) => {
+  try {
+    const scoreData = await Score.findAll({
+      where: { user_id: req.params.id },
+      // include: [{ model: User }]
+    });
+    res.status(200).json(scoreData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 
 module.exports = router;

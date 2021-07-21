@@ -42,12 +42,11 @@ export default {
     fetchSnippetScores: function(id) {
         return axios.get("/api/score/snippet/" + id)
     },
-    saveScore: function() {
-        return axios.post("/api/score")
-    },
-    // need fetchUserScore
     fetchUserScores: function(id) {
         return axios.get("/api/score/user/" + id)
+    },
+    saveScore: function() {
+        return axios.post("/api/score")
     }
 
 };

@@ -2,9 +2,11 @@ const router = require('express').Router();
 const { Snippet, User, Score } = require('../../models');
 
 // GET snippet by collection_id
-router.get('/', async (req, res) => {
+router.get('/collection/:id', async (req, res) => {
     try {
-      const snippetData = await Snippet.findAll();
+      const snippetData = await Snippet.findAll({
+        where: {collection_id: req.params.id},
+      });
       res.status(200).json(snippetData);
     } catch (err) {
       res.status(500).json(err);

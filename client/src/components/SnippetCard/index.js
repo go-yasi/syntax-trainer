@@ -5,8 +5,7 @@ function SnippetCard(props) {
         <div>
             <h2>{props.title}</h2>
             <p>{props.language}</p>
-            {/* <p>description of snippet---description of snippet---description of snippet---description of snippet---description of snippet</p> */}
-            <p>{props.code}</p>
+            <p>{props.description}</p>
         </div>
     )
 }

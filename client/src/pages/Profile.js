@@ -44,9 +44,9 @@ function Profile() {
         <div>
             <h1>Cool Profile</h1>
                 {profile.users ? (
-                <div>
-                    <UserCard username={profile.users.username} bio={profile.users.bio} avatar={profile.users.avatar}/>
-                </div>
+                    <div>
+                        <UserCard username={profile.users.username} bio={profile.users.bio} avatar={profile.users.avatar}/>
+                    </div>
                 ):(
                     <div>
                         Loading Bios

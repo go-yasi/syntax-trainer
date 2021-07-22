@@ -1,5 +1,5 @@
-//import React from "react";
 import React, { useState } from "react";
+import "./style.css";
 
 function LoginForm() {
 
@@ -14,24 +14,25 @@ function LoginForm() {
 
     return (
         <div>
-            <h2>Login Form</h2>
-            <section className="login-block">
+            <section className="login-block px-box rd-b-in">
                 {/* <!-- Login Form --> */}
-                <form className="form login-form" onSubmit={handleSubmit}>
+                <form className="form login-form flexform" onSubmit={handleSubmit}>
+                    <h2 className="form-header">Login</h2>
+                    {/* <!-- Username --> */}
                     <div className="form-group">
-                        {/* <!-- Username --> */}
                         <label for="username-login">username</label>
                         <input className="form-input" type="text" id="username-login" placeholder="username" onChange={e => setUsername(e.target.value)}></input>
                     </div>
+                    {/* <!-- Password --> */}
                     <div className="form-group">
-                        {/* <!-- Password --> */}
                         <label for="password-login">password</label>
                         <input className="form-input" type="password" id="password-login" placeholder="password" onChange={e => setPassword(e.target.value)}></input>
                     </div>
+                    {/* <!-- Login Button --> */}
                     <div className="form-group">
-                        {/* <!-- Login Button --> */}
                         <button className="green-btn login-button" type="submit">Log In</button>
                     </div>
+                    {/* <!-- Link to Signup Page --> */}
                     <div className="form-group">
                         <a className="l-s-cta" href="/signup">Need to sign up instead?</a>
                     </div>

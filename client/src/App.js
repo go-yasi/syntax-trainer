@@ -18,9 +18,10 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/collection" component={Collection} />
-          <Route exact path="/snippet" component={Snippet} />
+          {/* <Route exact path="/profile" component={Profile} /> */}
+          <Route path="/profile/:id" component={Profile} />
+          <Route path="/collection/:id" component={Collection} />
+          <Route path="/snippet/:id" component={Snippet} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           {/* <Route component={NoMatch} /> */}

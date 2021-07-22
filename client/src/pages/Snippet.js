@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Component } from "react";
+import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import { CopyBlock, dracula, nord } from "react-code-blocks";
 
@@ -7,6 +8,7 @@ import { CopyBlock, dracula, nord } from "react-code-blocks";
 function Snippet() {
     const [snippet, setSnippet] = useState({});
     const [testSnippet, setTestSnippet] = useState("aaa");
+    const {id} = useParams()
     useEffect(() => {
         loadSnippets();
         /*        fetch("/api/snippet/11")
@@ -14,7 +16,7 @@ function Snippet() {
       }, []);
 
     function loadSnippets() {
-        API.fetchSnippet(1)
+        API.fetchSnippet(id)
           .then(res =>{
               setSnippet(res.data);
               console.log(res.data);

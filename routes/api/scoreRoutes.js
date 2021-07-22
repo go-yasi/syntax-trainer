@@ -38,7 +38,7 @@ router.get('/user/:id', async (req, res) => {
   router.get('/user/:id', async (req, res) => {
     try {
         const scoreData = await sequelize.query(
-            `SELECT user.username, score.value, score.snippet_id FROM snippet
+            `SELECT user.username, score.value, score.snippet_id, snippet.title FROM snippet
             INNER JOIN score ON snippet.id=score.snippet_id
             INNER JOIN user ON score.user_id=user.id
             WHERE user.id = ?`,
@@ -58,7 +58,7 @@ router.get('/user/:id', async (req, res) => {
   router.get('/snippet/:id', async (req, res) => {
     try {
         const scoreData = await sequelize.query(
-            `SELECT user.username, score.value, score.snippet_id FROM snippet
+            `SELECT user.username, score.value, score.snippet_id, snippet.title FROM snippet
             INNER JOIN score ON snippet.id=score.snippet_id
             INNER JOIN user ON score.user_id=user.id
             WHERE snippet.id = ?`,

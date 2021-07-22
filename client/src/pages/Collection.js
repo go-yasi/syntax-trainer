@@ -1,10 +1,11 @@
 import React, { useEffect, useState, Component } from "react";
+import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import SnippetCard from "../components/SnippetCard";
 
 function Collection() {
     const [snippets, setSnippets] = useState({});
-
+    const {id} = useParams()
     useEffect(() => {
         loadSnippets();
         /*        fetch("/api/snippet/11")
@@ -12,7 +13,7 @@ function Collection() {
       }, []);
 
     function loadSnippets() {
-        API.fetchCollectionSnippets(3)
+        API.fetchCollectionSnippets(id)
           .then(res =>{
               setSnippets(res.data);
               console.log(res.data);

@@ -1,17 +1,30 @@
 //import React from "react";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
+import API from "../../utils/API"
 
 function SignupForm() {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [bio, setBio] = useState();
+    let history = useHistory();
     
     const handleSubmit = e => {
         e.preventDefault();
         console.log("username is " + username);
         console.log("password is " + password);
         console.log("bio is " + bio);
+        API.createUser({
+            username: username,
+            password: password
+        })
+        .then(res =>{
+            console.log(res)
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+            history.push('/')
+        })
+        .catch(err => console.log(err));
     };
     
 

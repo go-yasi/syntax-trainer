@@ -1,0 +1,27 @@
+/* FOOTER STYLES */
+footer {
+    border-top: 4px dotted black;
+    border-bottom: 4px dotted black;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-text {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.ft2 {
+    padding-bottom: .25em;
+}
+
+.star-gif {
+    height: 40px;
+    margin: 0 17px;
+}
+
+.github-link {
+    border-top: 2px dotted black;
+    padding-top: .25em;
+}

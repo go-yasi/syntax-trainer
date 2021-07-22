@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import API from "../utils/API"
 import CollectionCard from "../components/CollectionCard";
+import "./home.css";
 
 function Home() {
     const [collections, setCollections] = useState({});
@@ -25,25 +26,30 @@ function Home() {
       //console.log(collections[0].snippets.length);
 
     return (
-        <div>
-            <h1>Hello World! You're Home</h1>
+        <div className="homepage">
+            {/* <h1>Hello World! You're Home</h1> */}
+            <div className="home-collections">
+              {!collections.length ? (
+                <h1 className="text-center">No Collections to Display</h1>
+              ) : (
+                  collections.map(collection => {
+                    return (
+                      <CollectionCard
+                      className="collection-card"
+                        length={collection.snippets.length}
+                        title={collection.title}
+                      />
+                    );
+                  })
+              )}
+              <CollectionCard
+              className="collection-card"
+                  length={3}
+                  title={"LoopdiLoop"}
+              />
+            </div>
 
-            {!collections.length ? (
-              <h1 className="text-center">No Collections to Display</h1>
-            ) : (
-                collections.map(collection => {
-                  return (
-                    <CollectionCard
-                      length={collection.snippets.length}
-                      title={collection.title}
-                    />
-                  );
-                })
-            )}
-            <CollectionCard
-                length={3}
-                title={"LoopdiLoop"}
-            />
+            
 
         </div>
 

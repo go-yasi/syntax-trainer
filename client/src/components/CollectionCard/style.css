@@ -1,0 +1,19 @@
+/* CollectionCard Component Styles */
+
+.collection-card {
+    /* border: 2px solid red; */
+    padding: 2em;
+    flex: 0 1 20vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: white;
+}
+
+.collection-title {
+    font-size: 20px;
+    text-transform: capitalize !important;
+}
+
+.collection-btn {
+    margin-top: 1em;
+}

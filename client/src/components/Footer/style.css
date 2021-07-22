@@ -5,23 +5,27 @@ footer {
     padding: 20px 0;
     display: flex;
     justify-content: center;
+    margin-top: 1vw;
 }
 
 .footer-text {
+    /* border: 1px solid green; */
     font-size: 12px;
     line-height: 1.4;
+    
 }
 
 .ft2 {
-    padding-bottom: .25em;
+    padding-bottom: .5em;
 }
 
+.glb {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: flex-end;
+    padding-top: .5em;
+}
 .star-gif {
-    height: 40px;
-    margin: 0 17px;
-}
-
-.github-link {
-    border-top: 2px dotted black;
-    padding-top: .25em;
+    height: 17px;
+    margin: 0 4px;
 }

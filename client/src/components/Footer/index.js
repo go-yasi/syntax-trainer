@@ -6,19 +6,24 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <img className="star-gif" src={star} alt=""></img>
+
       <span className="flexform">
         <p className="footer-text">Developed by:</p>
         <p className="footer-text ft2">Joshua, Tai, Tom, and Yasi</p>
-        <Link
-        className="github-link"
-        to={{ pathname: "https://github.com/go-yasi/syntax-trainer" }} 
-        target="_blank" 
-        >
-        See the GitHub Repo
-        </Link>
+        <div className="glb">
+          <img className="star-gif" src={star} alt=""></img>
+          <Link
+          className="github-link"
+          to={{ pathname: "https://github.com/go-yasi/syntax-trainer" }} 
+          target="_blank" 
+          >
+          See the GitHub Repo
+          </Link>
+          <img className="star-gif" src={star} alt=""></img>
+        </div>
+        
       </span>
-      <img className="star-gif" src={star} alt=""></img>
+      
     </footer>
   );
 }

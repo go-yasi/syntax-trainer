@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import ProfileScoreCard from "../components/ProfileScoreCard";
 import UserCard from "../components/UserCard";
 import SnippetCard from "../components/SnippetCard";
@@ -7,6 +8,7 @@ import API from "../utils/API"
 function Profile() {
     const [profile, setProfile] = useState({});
     const [score, setScore] = useState({});
+    const {id} = useParams()
 
     useEffect(() => {
         loadProfile();
@@ -18,36 +20,32 @@ function Profile() {
     useEffect(() => {
         console.log(profile)
     }, [profile]);
+    useEffect(() => {
+        console.log(score)
+    }, [score]);
 
-    function loadProfile(id){
-        API.fetchUser(1)
+    function loadProfile(){
+        API.fetchUser(id) 
             .then(res =>{
                 setProfile(res.data);
                 console.log(res.data);
             })
             .catch(err => console.log(err));
     }
-    function loadScores(id){
-        API.fetchUserScores(1)
+    function loadScores(){
+        API.fetchUserScores(id) 
             .then(res =>{
                 setScore(res.data);
                 console.log(res.data);
             })
             .catch(err => console.log(err));
     }
-    // async function loadAll(){
-    //     // const load = await loadProfile();
-    //     // const load2 = await loadScores();
-    //     console.log(await loadProfile());
-    //     console.log(await loadScores());
-    // }
     
     return (
         <div>
             <h1>Cool Profile</h1>
                 {profile.username ? (
                     <div>
-                        {/* <UserCard username={'Tai'} bio={'Taitai'} avatar={profile.users.avatar}/> */}
                         <UserCard username={profile.username} bio={profile.bio} avatar={profile.avatar}/>
                     </div>
                 ):(
@@ -55,19 +53,41 @@ function Profile() {
                         Loading Bios
                     </div>
                 )}
-                {score.length ? (
+                {score.length > 0 ? (
                     <div>
-                        <ProfileScoreCard snippet={score[0].snippet_id} value={score[0].value}/>
-                        <ProfileScoreCard snippet={score[1].snippet_id} value={score[1].value}/>
+                        <ProfileScoreCard snippet={score[0].title} value={score[0].value}/>
                     </div>
                 ):(
                     <div>
                         Loading Score Card
                     </div>
                 )}
-            {/* <ProfileScoreCard snippet={profile} scores={profile}/> */}
-            {/* <SnippetCard title={profile.snippets[0].title} language={profile.snippets[0].language} code={profile.snippets[0].code}/>
-            <SnippetCard title={profile.snippets[1].title} language={profile.snippets[1].language} code={profile.snippets[1].code}/> */}
+                {score.length > 1 ? (
+                    <div>
+                        <ProfileScoreCard snippet={score[1].title} value={score[1].value}/>
+                    </div>
+                ):(
+                    <div>
+                    </div>
+                )}
+                {score.length > 2 ? (
+                    <div>
+                        <ProfileScoreCard snippet={score[2].title} value={score[2].value}/>
+                    </div>
+                ):(
+                    <div></div>
+                )}
+              
+                {profile.snippets ? (
+                    <div> 
+                        <SnippetCard title={profile.snippets[0].title} language={profile.snippets[0].language} />
+                        {/* need mapping */}
+                    </div>
+                ):(
+                    <div>
+                        Loading Snippets
+                    </div>
+                )}
         </div>
     );
 }

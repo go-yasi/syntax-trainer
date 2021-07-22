@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
-  const loadUserId = JSON.parse(localStorage.getItem('user'));
-  console.log(loadUserId.id);
+  // const loadUserId = JSON.parse(localStorage.getItem('user'));
+  // console.log(loadUserId.id);
   return (
     <nav className="nav">
       <Link className="nav-logo" to="/">
@@ -13,7 +13,9 @@ function Nav() {
       <div className="nav-list">
         <div className="nav-item nav-profile">
           <Link
-          to={"/profile/" + loadUserId.id}
+          to={"/profile/" 
+          // + loadUserId.id
+        }
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
           Profile
@@ -27,13 +29,9 @@ function Nav() {
           Login
           </Link>
         </div>
-        <div className="nav-item nav-signup">
-          <Link
-          to="/signup"
-          className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}
-          >
-          Sign Up
-          </Link>
+        <div className="nav-item nav-logout">
+          {/* Create Logout link */}
+          {/* only visible if logged in */}
         </div>
       </div>
     </nav>

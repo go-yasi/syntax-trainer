@@ -1,6 +1,6 @@
 //import React from "react";
 import React, { useState } from "react";
-import { BrowserRouter as useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API"
 
 function SignupForm() {

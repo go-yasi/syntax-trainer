@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./style.css";
+import "./style.css";
 
 function Nav() {
   return (
@@ -23,6 +23,14 @@ function Nav() {
           className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
           >
           Login
+          </Link>
+        </div>
+        <div className="nav-item nav-signup">
+          <Link
+          to="/signup"
+          className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}
+          >
+          Sign Up
           </Link>
         </div>
       </div>

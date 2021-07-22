@@ -17,23 +17,24 @@ function SignupForm() {
 
     return (
         <div>
-            <h2>Signup Form</h2>
-            <section className="signup-block">
+            
+            <section className="signup-block px-box rd-b-in">
                 {/* <!-- Signup Form --> */}
-                <form className="form signup-form" onSubmit={handleSubmit}>
+                <form className="form signup-form flexform" onSubmit={handleSubmit}>
+                    <h2 className="form-header">Signup</h2>
                     {/* <!-- Username --> */}
                     <div className="form-group">
-                        <label className="label" for="username-signup">create username:</label>
+                        <label className="form-label" for="username-signup">create username:</label>
                         <input className="form-input" type="text" id="username-signup" placeholder="username" onChange={e => setUsername(e.target.value)}></input>
                         </div>
                     {/* <!-- Password --> */}
                     <div className="form-group">
-                        <label className="label" for="password-signup">create password:</label>
+                        <label className="form-label" for="password-signup">create password:</label>
                         <input className="form-input" type="password" id="password-signup" placeholder="password" onChange={e => setPassword(e.target.value)}></input>
                     </div>
                     {/* <!-- Bio --> */}
                     <div className="form-group">
-                        <label className="label" for="bio-signup">tell us about yourself:</label>
+                        <label className="form-label" for="bio-signup">add bio:</label>
                         <input className="form-input" type="text" id="bio-signup" onChange={e => setBio(e.target.value)}></input>
                     </div>
                     {/* <!-- Signup Button --> */}

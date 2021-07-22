@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./style.css";
 
 function UserCard() {
     return (
-    <div>
+    <div className="user-card">
       <h4>User Name</h4>
       <h4>Bio</h4>
       <h4>Avatar</h4>

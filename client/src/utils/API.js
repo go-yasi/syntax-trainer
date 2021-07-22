@@ -12,6 +12,12 @@ export default {
     //   logoutUser: function() {
     //       return axios.post("/api/users/logout")
     //   }
+    loginUser: function(user) {
+        return axios.post('/api/users/login', user)
+    },
+    logoutUser: function(user) {
+        return axios.post('/api/users/logout', user)
+    },
 
     // COLLECTION ROUTES
     fetchCollections: function() {

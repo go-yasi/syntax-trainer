@@ -4,7 +4,7 @@ import ProfileScoreCard from "../components/ProfileScoreCard";
 import UserCard from "../components/UserCard";
 import SnippetCard from "../components/SnippetCard";
 import API from "../utils/API"
-import './profile.css'
+import "./profile.css"
 
 function Profile() {
     const [profile, setProfile] = useState({});

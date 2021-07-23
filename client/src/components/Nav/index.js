@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
-  const loadUserId = JSON.parse(localStorage.getItem('user'));
-  console.log(loadUserId.id);
+  const [logged, setLogged] = useState(false);
+  const [user, setFoundUser] = useState({});
+  
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("user");
+    if (loggedIn) {
+      setLogged(true)
+      setFoundUser (JSON.parse(loggedIn));
+     
+    }
+  }, []);
+
+  
+
+  
+  
   return (
     <nav className="nav">
       <Link className="nav-logo" to="/">
@@ -12,12 +26,22 @@ function Nav() {
       </Link>
       <div className="nav-list">
         <div className="nav-item nav-profile">
-          <Link
-          to={"/profile/" + loadUserId.id}
+          {logged ? (
+            <Link
+            to={"/profile/" + user.id}
+            className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
+            >
+            Profile
+            </Link>
+          ) : (
+            <Link
+          to={"/profile"}
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
           Profile
           </Link>
+          )}
+          
         </div>
         <div className="nav-item nav-login">
           <Link
@@ -38,6 +62,8 @@ function Nav() {
       </div>
     </nav>
   );
+ 
+
 };
 
 export default Nav;

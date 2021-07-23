@@ -24,6 +24,11 @@ function LoginForm() {
         .catch(err => console.log(err));
     };
 
+    // const handleLogout = () => {
+    //     setUsername("");
+    //     setPassword("");
+    //     localStorage.clear();
+    //   };
 
 
     return (

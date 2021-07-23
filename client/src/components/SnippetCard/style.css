@@ -1,0 +1,9 @@
+/* SNIPPET CARD STYLES */
+
+.snippet-card {
+    padding: 2em;
+    flex: 0 1 20vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: white;
+}

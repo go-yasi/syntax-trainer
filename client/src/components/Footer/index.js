@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer">
 
-      <span className="flexform">
+      <span className="info flexform rc-b">
         <p className="footer-text">Developed by:</p>
         <p className="footer-text ft2">Joshua, Tai, Tom, and Yasi</p>
         <div className="glb">

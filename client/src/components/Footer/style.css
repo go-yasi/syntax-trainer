@@ -1,11 +1,21 @@
 /* FOOTER STYLES */
 footer {
-    border-top: 4px dotted black;
-    border-bottom: 4px dotted black;
-    padding: 20px 0;
+    border-top: 16px solid rgb(97, 224, 38);
+    /* border-bottom: 4px dotted black; */
+    padding: 30px 0;
     display: flex;
     justify-content: center;
-    margin-top: 1vw;
+    background-image: url(../../assets/graphics/brick.png);
+    background-size: 75px;
+    background-repeat: repeat;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.info {
+    background-color: white;
+    padding: 1em;
 }
 
 .footer-text {

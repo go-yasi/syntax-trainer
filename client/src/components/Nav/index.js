@@ -1,22 +1,41 @@
 import React, { useState, useEffect } from "react";
+// import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import API from "../../utils/API"
 import "./style.css";
 
 function Nav() {
-
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
   const [logged, setLogged] = useState(false);
   const [user, setFoundUser] = useState({});
+  // let history = useHistory();
   
   useEffect(() => {
     const loggedIn = localStorage.getItem("user");
     if (loggedIn) {
       setLogged(true)
-      setFoundUser (JSON.parse(loggedIn));
+      // setFoundUser (JSON.parse(loggedIn));
      
     }
   }, []);
 
-  
+  // API.logoutUser({
+  //   username: username,
+  //   password: password
+  // })
+  // .then(res =>{
+  //   console.log(res)
+  //   localStorage.setItem('user', JSON.stringify(res.data.user))
+  //   history.push('/')
+  // })
+  // .catch(err => console.log(err));
+
+  const handleLogout = () => {
+        setUsername("");
+        setPassword("");
+        localStorage.clear();
+      };
 
   
   
@@ -38,7 +57,7 @@ function Nav() {
             </Link>
           ) : (
             <Link
-          to={"/profile"}
+          to={"/"}
 
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
@@ -48,12 +67,22 @@ function Nav() {
           
         </div>
         <div className="nav-item nav-login">
-          <Link
-          to="/login"
-          className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
-          >
-          Login
-          </Link>
+          {logged ? (
+            <Link
+            to="/"
+            onClick={handleLogout}
+            className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+            >
+            Log out
+            </Link>
+            ) : (
+            <Link
+            to="/login"
+            className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+            >
+            Login
+            </Link>
+            )}
         </div>
         <div className="nav-item nav-logout">
           {/* Create Logout link */}

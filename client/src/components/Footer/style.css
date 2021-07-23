@@ -1,0 +1,31 @@
+/* FOOTER STYLES */
+footer {
+    border-top: 4px dotted black;
+    border-bottom: 4px dotted black;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+}
+
+.footer-text {
+    /* border: 1px solid green; */
+    font-size: 12px;
+    line-height: 1.4;
+    
+}
+
+.ft2 {
+    padding-bottom: .5em;
+}
+
+.glb {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: flex-end;
+    padding-top: .5em;
+}
+.star-gif {
+    height: 17px;
+    margin: 0 4px;
+}

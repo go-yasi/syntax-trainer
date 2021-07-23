@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
+
   const [logged, setLogged] = useState(false);
   const [user, setFoundUser] = useState({});
   
@@ -19,6 +20,7 @@ function Nav() {
 
   
   
+
   return (
     <nav className="nav">
       <Link className="nav-logo" to="/">
@@ -26,6 +28,7 @@ function Nav() {
       </Link>
       <div className="nav-list">
         <div className="nav-item nav-profile">
+
           {logged ? (
             <Link
             to={"/profile/" + user.id}
@@ -36,6 +39,7 @@ function Nav() {
           ) : (
             <Link
           to={"/profile"}
+
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
           Profile
@@ -51,13 +55,9 @@ function Nav() {
           Login
           </Link>
         </div>
-        <div className="nav-item nav-signup">
-          <Link
-          to="/signup"
-          className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}
-          >
-          Sign Up
-          </Link>
+        <div className="nav-item nav-logout">
+          {/* Create Logout link */}
+          {/* only visible if logged in */}
         </div>
       </div>
     </nav>

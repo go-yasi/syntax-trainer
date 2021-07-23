@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import './fonts/dogicapixel.woff';
+import './fonts/dogicapixel.woff2';
+import './fonts/dogicapixelbold.woff';
+import './fonts/dogicapixelbold.woff2';
 
 ReactDOM.render(
   <React.StrictMode>

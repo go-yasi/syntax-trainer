@@ -54,6 +54,9 @@ p, a, input {
 }
 
 /* SITEWIDE */
+* {
+	box-sizing: border-box;
+}
 
 body {
 	background-color: skyblue;

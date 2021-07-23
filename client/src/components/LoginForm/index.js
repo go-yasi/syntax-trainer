@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
-import API from "../../utils/API"
+import API from "../../utils/API";
 import "./style.css";
 
 function LoginForm() {
@@ -23,13 +23,6 @@ function LoginForm() {
         })
         .catch(err => console.log(err));
     };
-
-    // const handleLogout = () => {
-    //     setUsername("");
-    //     setPassword("");
-    //     localStorage.clear();
-    //   };
-
 
     return (
         <div>

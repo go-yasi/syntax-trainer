@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import ProfileScoreCard from "../components/ProfileScoreCard";
 import UserCard from "../components/UserCard";
 import SnippetCard from "../components/SnippetCard";
 import API from "../utils/API"
 
+
 function Profile() {
     const [profile, setProfile] = useState({});
     const [score, setScore] = useState({});
-    const {id} = useParams()
+    const {id} = useParams();
+    let history = useHistory();
 
     useEffect(() => {
         loadProfile();
-    }, []);
-    useEffect(() => {
         loadScores();
+       
     }, []);
 
     useEffect(() => {
@@ -22,6 +23,7 @@ function Profile() {
     }, [profile]);
     useEffect(() => {
         console.log(score)
+        history.push('/profile/' + id)
     }, [score]);
 
     function loadProfile(){

@@ -36,8 +36,10 @@ function Home() {
                     return (
                       <CollectionCard
                       className="collection-card"
-                        length={collection.snippets.length}
-                        title={collection.title}
+                      length={collection.snippets.length}
+                      title={collection.title}
+                      id={collection.id}
+                      key={collection.id}
                       />
                     );
                   })

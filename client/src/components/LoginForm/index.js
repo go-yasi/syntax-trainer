@@ -35,24 +35,24 @@ function LoginForm() {
         <div>
             <section className="login-block px-box rd-b-in">
                 {/* <!-- Login Form --> */}
-                <form className="form login-form flexform" onSubmit={handleSubmit}>
-                    <h2 className="form-header">Login</h2>
+                <form className="login-fm flexform" onSubmit={handleSubmit}>
+                    <h2 className="fm-header">LOGIN</h2>
                     {/* <!-- Username --> */}
-                    <div className="form-group">
-                        <label for="username-login">username</label>
-                        <input className="form-input" type="text" id="username-login" placeholder="username" onChange={e => setUsername(e.target.value)}></input>
+                    <div className="fm-group">
+                        <label className="fm-label" for="username-login"></label>
+                        <input className="fm-input" type="text" id="username-login" placeholder="username" onChange={e => setUsername(e.target.value)}></input>
                     </div>
                     {/* <!-- Password --> */}
-                    <div className="form-group">
-                        <label for="password-login">password</label>
-                        <input className="form-input" type="password" id="password-login" placeholder="password" onChange={e => setPassword(e.target.value)}></input>
+                    <div className="fm-group">
+                        <label className="fm-label" for="password-login"></label>
+                        <input className="fm-input" type="password" id="password-login" placeholder="password" onChange={e => setPassword(e.target.value)}></input>
                     </div>
                     {/* <!-- Login Button --> */}
-                    <div className="form-group">
-                        <button className="green-btn login-button" type="submit">Log In</button>
+                    <div className="fm-group">
+                        <button className="blue-btn login-button" type="submit">LOGIN</button>
                     </div>
                     {/* <!-- Link to Signup Page --> */}
-                    <div className="form-group">
+                    <div className="fm-group">
                         <a className="l-s-cta" href="/signup">Need to sign up instead?</a>
                     </div>
                 </form>

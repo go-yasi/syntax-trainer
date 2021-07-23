@@ -64,7 +64,7 @@ function Nav() {
             </Link>
           ) : (
             <Link
-          to={"/"}
+          to={"/signup"}
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
           Profile

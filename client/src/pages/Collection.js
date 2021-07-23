@@ -6,9 +6,11 @@ import './collection.css'
 
 function Collection() {
     const [snippets, setSnippets] = useState({});
+    const [collection, setCollection] = useState({});
     const {id} = useParams()
     useEffect(() => {
         loadSnippets();
+        loadCollection();
         /*        fetch("/api/snippet/11")
         .then(res => console.log(res))*/
       }, []);
@@ -20,11 +22,20 @@ function Collection() {
               console.log(res.data);
           })
           .catch(err => console.log(err));
-      }
+      };
+
+    function loadCollection() {
+      API.fetchCollection(id) 
+      .then( res => {
+        setCollection(res.data);
+        console.log("Collection: " + res.data);
+      })
+      .catch(err => console.log(err));
+    }
 
     return (
         <div className="collection-page">
-            {/* <h1>Cool Collection</h1> */}
+            <h1>{collection.title} Snippets</h1>
             <div className="collection-snippets">
               {!snippets.length ? (
                 <h1 className="text-center">No Collections to Display</h1>
@@ -35,6 +46,8 @@ function Collection() {
                         title={snippet.title}
                         language={snippet.language}
                         description={snippet.description}
+                        key={snippet.id}
+                        id={snippet.id}
                       />
                     );
                   })

@@ -6,10 +6,11 @@ function ProfileScoreCard(props) {
   return (
     <section>
         <div className="heading">
-            <h1>Your High Scores</h1>
+            <h1>HIGH SCORES</h1>
         </div>
         <div className="scores">
-            <h3 className="">{props.snippet}-{props.value}</h3>
+            <h3 className="">{props.snippet}</h3>
+            <p>Score: {props.value}</p>
         </div>
     </section>
   );

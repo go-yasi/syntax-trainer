@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from 'react-router-dom';
-import API from "../../utils/API";
+import React from "react";
+import { useHistory } from 'react-router-dom';
 import "./style.css";
 
 function CollectionCard(props) {
-
     const history = useHistory();
-
 
     return(
         <div className="collection-card flexform rd-b">
@@ -15,6 +12,6 @@ function CollectionCard(props) {
             <button to={"/collection/" + props.id} onClick={()=> history.push("/collection/" + props.id)} className="collection-btn ">START</button>
          </div>
     )
-}
+};
 
 export default CollectionCard;

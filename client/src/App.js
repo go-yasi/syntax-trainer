@@ -27,9 +27,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 function App() {
   return (
     <div>
-      
     <Router>
-
       <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -42,7 +40,6 @@ function App() {
           {/* <Route component={NoMatch} /> */}
         </Switch>
         <Footer />
-
     </Router>
     </div>
     

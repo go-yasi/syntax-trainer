@@ -11,14 +11,10 @@ function Nav() {
     const loggedIn = localStorage.getItem("user");
     if (loggedIn) {
       setLogged(true)
-      setFoundUser (JSON.parse(loggedIn));
+      // setFoundUser (JSON.parse(loggedIn));
      
     }
   }, []);
-
-  
-
-  
   
 
   return (

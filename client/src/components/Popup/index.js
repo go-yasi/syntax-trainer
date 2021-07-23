@@ -20,7 +20,7 @@ function Popup() {
     }, [scores]);
 
     function loadScores(){
-        API.fetchSnippetScores(id) 
+        API.fetchSnippetScores(1) 
             .then(res =>{
                 setScores(res.data);
                 console.log(res.data);
@@ -42,9 +42,9 @@ function Popup() {
         <Modal.Body>
             <p>Modal body text goes here.</p>
             <HighScoreCard
-            users={scores.username}
-            snippet={scores.title} 
-            value={scores.value}
+            username={scores[0].username}
+            title={scores[0].title} 
+            value={scores[0].value}
             />
         </Modal.Body>
 

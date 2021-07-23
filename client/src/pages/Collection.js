@@ -2,6 +2,7 @@ import React, { useEffect, useState, Component } from "react";
 import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import SnippetCard from "../components/SnippetCard";
+import './collection.css'
 
 function Collection() {
     const [snippets, setSnippets] = useState({});
@@ -22,22 +23,24 @@ function Collection() {
       }
 
     return (
-        <div>
-            <h1>Cool Collection</h1>
+        <div className="collection-page">
+            {/* <h1>Cool Collection</h1> */}
+            <div className="collection-snippets">
+              {!snippets.length ? (
+                <h1 className="text-center">No Collections to Display</h1>
+              ) : (
+                  snippets.map(snippet => {
+                    return (
+                      <SnippetCard
+                        title={snippet.title}
+                        language={snippet.language}
+                        description={snippet.description}
+                      />
+                    );
+                  })
+              )}
+            </div>
 
-            {!snippets.length ? (
-              <h1 className="text-center">No Collections to Display</h1>
-            ) : (
-                snippets.map(snippet => {
-                  return (
-                    <SnippetCard
-                      title={snippet.title}
-                      language={snippet.language}
-                      description={snippet.description}
-                    />
-                  );
-                })
-            )}
             
         </div>
     );

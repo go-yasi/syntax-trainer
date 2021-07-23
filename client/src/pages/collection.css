@@ -1,0 +1,7 @@
+/* COLLECTION PAGE STYLES */
+
+.collection-snippets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

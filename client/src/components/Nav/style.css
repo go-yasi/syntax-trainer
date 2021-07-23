@@ -1,3 +1,5 @@
+/* NAV STYLES */
+
 .nav {
     display: flex;
     width: 100%;
@@ -14,4 +16,8 @@
 }
 .nav-logo {
     padding-left: 1em;
+}
+
+.nav-link {
+    z-index: 99;
 }

@@ -14,11 +14,18 @@ function Nav() {
   useEffect(() => {
     const loggedIn = localStorage.getItem("user");
     if (loggedIn) {
-      setLogged(true)
-      // setFoundUser (JSON.parse(loggedIn));
-     
+      setLogged(true);
+      setUsername("");
+        setPassword("");
     }
   }, []);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("user");
+    if (loggedIn) {
+      setFoundUser (JSON.parse(loggedIn));
+    }
+   }, [logged]);
 
   // API.logoutUser({
   //   username: username,
@@ -32,6 +39,7 @@ function Nav() {
   // .catch(err => console.log(err));
 
   const handleLogout = () => {
+    setLogged(false);
         setUsername("");
         setPassword("");
         localStorage.clear();
@@ -47,7 +55,6 @@ function Nav() {
       </Link>
       <div className="nav-list">
         <div className="nav-item nav-profile">
-
           {logged ? (
             <Link
             to={"/profile/" + user.id}
@@ -58,13 +65,11 @@ function Nav() {
           ) : (
             <Link
           to={"/"}
-
           className={window.location.pathname === "/profile/" ? "nav-link active" : "nav-link"}
           >
           Profile
           </Link>
           )}
-          
         </div>
         <div className="nav-item nav-login">
           {logged ? (
@@ -83,10 +88,6 @@ function Nav() {
             Login
             </Link>
             )}
-        </div>
-        <div className="nav-item nav-logout">
-          {/* Create Logout link */}
-          {/* only visible if logged in */}
         </div>
       </div>
     </nav>

@@ -10,9 +10,11 @@ function Popup(props) {
 
     const [scores, setScores] = useState({});
     const {id} = useParams();
+    const user = JSON.parse(localStorage.getItem("user"));
 
     useEffect(() => {
         loadScores();
+        console.log(props.score);
     }, []);
 
     useEffect(() => {
@@ -91,6 +93,12 @@ function Popup(props) {
                     value={scores[4].value}
                     />
                 ):(<p></p>)}
+
+                    <h3>Your Score</h3>
+                    <HighScoreCard
+                    username={user?(user.username):("guest")}
+                    value={props.score.value}
+                    />
             </Modal.Body>
         )}
 

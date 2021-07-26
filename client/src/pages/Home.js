@@ -44,11 +44,6 @@ function Home() {
                     );
                   })
               )}
-              <CollectionCard
-              className="collection-card"
-                  length={3}
-                  title={"LoopdiLoop"}
-              />
             </div>
 
             

@@ -46,6 +46,7 @@ class Timer extends React.Component {
         })
         if(this.state.time < 1){
             clearInterval(this.timer);
+            this.props.scored(0,1,0)
         }
     }, 1000);
   }
@@ -66,10 +67,6 @@ class Timer extends React.Component {
       }
   }
 
-//   score(errors , timeTotal , timeLeft){
-//     let score = Math.floor( timeLeft*100/timeTotal - errors);
-//     console.log(score);
-// }
 
   render() {
     let start = (this.state.time == 0) ?
@@ -97,52 +94,3 @@ class Timer extends React.Component {
 }
 export default Timer;
 
-///////////////////////////////////////////////////
-// import { useEffect, useState } from 'react'
-
-// const React = require('react')
-// //const ms = require('pretty-ms')
-// function Timer(props){
-//     const [state, setState] = useState({
-//         time: props.length,
-//         isOn: false,
-//         start: 0,
-//         game: props.game,
-//     });
-//     useEffect(() => {
-//         if(state.game){
-//             startTimer();
-//         }else{
-//             stopTimer();
-//         }
-//       }, [state.game]);
-//     // this.startTimer = this.startTimer.bind(this)
-//     // this.stopTimer = this.stopTimer.bind(this)
-//     // this.resetTimer = this.resetTimer.bind(this)
-//   function startTimer() {
-//     setState({
-//       isOn: true,
-//       time: this.state.time,
-//       start: Date.now() - this.state.time,
-//       game: props.game,
-//     })
-//     timer = setInterval(() => setState({
-//       ...state,  
-//       time: this.state.time - 1
-//     }), 1000);
-//   }
-//   function stopTimer() {
-//     setState({...state, isOn: false})
-//     clearInterval(timer)
-//   }
-//   function resetTimer() {
-//     this.setState({time: 0, isOn: false})
-//   }
-
-//   return(
-//       <div>
-//         <h3>time: {state.time}</h3>
-//       </div>
-//     )
-// }
-// export default Timer;

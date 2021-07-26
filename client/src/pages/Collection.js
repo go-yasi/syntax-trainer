@@ -34,7 +34,7 @@ function Collection() {
     }
 
     return (
-        <div className="collection-page">
+        <div className="collection-page full-page">
             <h1>{collection.title} Snippets</h1>
             <div className="collection-snippets">
               {!snippets.length ? (

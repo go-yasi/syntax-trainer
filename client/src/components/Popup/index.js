@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import API from "../../utils/API.js"
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

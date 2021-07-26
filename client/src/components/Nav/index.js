@@ -74,7 +74,7 @@ function Nav() {
         <div className="nav-item nav-login">
           {logged ? (
             <Link
-            to="/"
+            to="/login"
             onClick={handleLogout}
             className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
             >

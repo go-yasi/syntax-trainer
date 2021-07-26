@@ -89,22 +89,21 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-page-usersnippets">
-                <h3>YOUR SNIPPETS</h3>
-                {profile.snippets ? (
-                    <div> 
-                        <SnippetCard 
-                        title={profile.snippets[0].title} 
-                        language={profile.snippets[0].language} 
-                        key={profile.snippets.id}
-                        id={profile.snippets.id}
-                        />
-                        {/* need mapping */}
-                    </div>
-                ):(
-                    <div>
-                        Loading your snippets...
-                    </div>
-                )}
+            {!profile.snippets ? (
+                <h1 className="text-center">No Snippets to Display</h1>
+              ) : (
+                profile.snippets.map(snippet => {
+                    return (
+                      <SnippetCard
+                        title={snippet.title}
+                        language={snippet.language}
+                        description={snippet.description}
+                        key={snippet.id}
+                        id={snippet.id}
+                      />
+                    );
+                  })
+              )}
             </div>
         </div>
     );

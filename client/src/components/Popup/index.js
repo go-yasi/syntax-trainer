@@ -42,9 +42,9 @@ function Popup() {
         <Modal.Body>
             <p>Modal body text goes here.</p>
             <HighScoreCard
-            username={scores[0].username}
-            title={scores[0].title} 
-            value={scores[0].value}
+            username={scores.username}
+            title={scores.title} 
+            value={scores.value}
             />
         </Modal.Body>
 

@@ -89,6 +89,7 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-page-usersnippets">
+                <h1 className="text-center">Your Snippets</h1>
             {!profile.snippets ? (
                 <h1 className="text-center">No Snippets to Display</h1>
               ) : (

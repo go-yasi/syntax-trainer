@@ -15,6 +15,10 @@ Snippet.init(
         type: DataTypes.STRING,
         allowNull: false
     },
+    description: {
+        type: DataTypes.STRING,
+        
+    },
     code: {
         type: DataTypes.TEXT,
         allowNull: false

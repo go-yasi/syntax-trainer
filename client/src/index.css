@@ -57,6 +57,9 @@ p, a, input {
 * {
 	box-sizing: border-box;
 }
+/* .full-page {
+	min-height: 90vh;
+} */
 /* 
 body {
 	background-color: skyblue;

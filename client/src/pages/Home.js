@@ -27,7 +27,7 @@ function Home() {
       //console.log(collections[0].snippets.length);
 
     return (
-        <div className="homepage">
+        <div className="homepage full-page">
             <h1>Hello World! You're Home</h1>
             <Popup />
             <div className="home-collections">

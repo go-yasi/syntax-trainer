@@ -4,7 +4,9 @@ import SignupForm from "../components/SignupForm";
 class Signup extends Component {
     render() {
         return (
-            <SignupForm />
+            <div className="signup-page full-page">
+                <SignupForm />
+            </div>
         )
     }
 }

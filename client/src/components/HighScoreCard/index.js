@@ -1,17 +1,18 @@
+// HIGH SCORE CARD
+
 import React from "react";
-// import "./style.css";
+import "./style.css";
 // import  from "";
 
 function HighScoreCard(props) {
   return (
-    <section>
-        <div className="heading">
+
+        <div className="scores-list">
+            <p className="single-score">{props.username}: {props.value}</p>
         </div>
-        <div className="scores">
-            <h3 className="">{props.username}-{props.title}-{props.value}</h3>
-        </div>
-    </section>
+
   );
 }
 
 export default HighScoreCard;
+

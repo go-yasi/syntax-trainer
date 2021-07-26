@@ -28,17 +28,18 @@ function Popup(props) {
             .catch(err => console.log(err));
     }
 
-    
-
     return (
-        <Modal.Dialog
-        show={show}
+        <Modal 
+        show={props.show}
         onHide={() => setShow(false)}
         backdrop="static"
         keyboard={false}
         >
+        <Modal.Dialog 
+        
+        >
         <Modal.Header>
-            <Modal.Title>High Scores</Modal.Title>
+            <Modal.Title><h1 className="modal-title">High Scores</h1></Modal.Title>
         </Modal.Header>
         {!scores.length ? 
         (
@@ -89,16 +90,16 @@ function Popup(props) {
                     value={scores[4].value}
                     />
                 ):(<p></p>)}
-                
             </Modal.Body>
         )}
         
 
         <Modal.Footer className="popup-footer">
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
+            <Button className="red-btn" variant="secondary">Close</Button>
+            <Button className="green-btn" variant="primary">Save changes</Button>
         </Modal.Footer>
         </Modal.Dialog>
+        </Modal>
     )
 }
 

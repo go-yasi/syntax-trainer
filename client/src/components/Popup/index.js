@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import HighScoreCard from "../HighScoreCard";
 
-function Popup() {
+function Popup(props) {
     const [show, setShow] = useState(false);
 
     const [scores, setScores] = useState({});
@@ -20,7 +20,7 @@ function Popup() {
     }, [scores]);
 
     function loadScores(){
-        API.fetchSnippetScores(1) 
+        API.fetchSnippetScores(props.snippet) 
             .then(res =>{
                 setScores(res.data);
                 console.log(res.data);

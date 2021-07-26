@@ -51,8 +51,8 @@ export default {
     fetchUserScores: function(id) {
         return axios.get("/api/score/user/" + id)
     },
-    saveScore: function() {
-        return axios.post("/api/score")
+    saveScore: function(score) {
+        return axios.post("/api/score", score)
     }
 
 };

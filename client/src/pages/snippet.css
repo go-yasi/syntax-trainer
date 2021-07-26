@@ -1,3 +1,13 @@
+/* SNIPPET PAGE STYLES */
+
+/* set page height */
 .snippet-page {
     height: 90vh;
 }
+
+/* hide copy button */
+.kvndSo {
+    display: none !important;
+}
+
+/* text area overlay */

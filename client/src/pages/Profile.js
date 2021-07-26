@@ -44,7 +44,7 @@ function Profile() {
     }
     
     return (
-        <div className="profile-page">
+        <div className="profile-page full-page">
             <h1>Welcome to your profile, {profile.username}!</h1>
             <div className="profile-flex">
                 <div className="profile-page-usercard">

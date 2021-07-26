@@ -79,7 +79,7 @@ router.post('/seed', (req, res) => {
       <input type="text" id="lname" name="lname"><br><br>
       <input type="submit" value="Submit">
       </form>`,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 1
     },
@@ -95,7 +95,7 @@ router.post('/seed', (req, res) => {
       <label for="vehicle3"> I have a boat</label><br><br>
       <input type="submit" value="Submit">
     </form>`,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 2
     },
@@ -116,7 +116,7 @@ router.post('/seed', (req, res) => {
       </p>
       <p><input id="btn" type="button" value="How many are selected?" /></p>
     </form>`,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 3
     },
@@ -128,7 +128,7 @@ router.post('/seed', (req, res) => {
       <li>Tea</li>
       <li>Milk</li>
     </ol>`,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 4
     },
@@ -144,7 +144,7 @@ router.post('/seed', (req, res) => {
       </ul>
     </section>
 `,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 5
     },
@@ -161,7 +161,7 @@ router.post('/seed', (req, res) => {
         <li>This is list item three</li>
       </ul>
       <section>`,
-     language: "HTML",
+     language: "javascript",
      collection_id: 1,
      user_id: 6
     },
@@ -195,7 +195,7 @@ router.post('/seed', (req, res) => {
           color: blue;
           background-color: orange;
         }`,
-     language: "CSS",
+     language: "javascript",
      collection_id: 2,
      user_id: 7
     },
@@ -214,7 +214,7 @@ router.post('/seed', (req, res) => {
           default:
               darkOrLight = "Unknown";
       }`,
-     language: "JAVASCRIPT",
+     language: "javascript",
      collection_id: 3,
      user_id: 1
     },
@@ -243,7 +243,7 @@ router.post('/seed', (req, res) => {
           case 6:
             day = "Saturday";
         }`,
-     language: "JAVASCRIPT",
+     language: "javascript",
      collection_id: 3,
      user_id: 2
     },
@@ -257,7 +257,7 @@ router.post('/seed', (req, res) => {
       
       function myFunction(value) {
         txt += value;`,
-     language: "JAVASCRIPT",
+     language: "javascript",
      collection_id: 3,
      user_id: 3
     },
@@ -272,7 +272,7 @@ router.post('/seed', (req, res) => {
         text += cars[i];
         i++;
       }`,
-     language: "JAVASCRIPT",
+     language: "javascript",
      collection_id: 3,
      user_id: 4
     },
@@ -284,7 +284,7 @@ router.post('/seed', (req, res) => {
           var total = dailyTotal * days;
           return total;
         }`,
-     language: "JAVASCRIPT",
+     language: "javascript",
      collection_id: 3,
      user_id: 5
     },
@@ -309,7 +309,7 @@ router.post('/seed', (req, res) => {
           }
         }
         `,
-     language: "CSS",
+     language: "javascript",
      collection_id: 2,
      user_id: 1
     },

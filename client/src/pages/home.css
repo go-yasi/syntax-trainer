@@ -1,5 +1,9 @@
 /* HOME PAGE */
 
+.homepage {
+    height: 90vh;
+}
+
 .home-collections {
     /* border: 2px solid blue; */
 	display: flex;
@@ -7,5 +11,4 @@
     justify-content: space-evenly;
     margin: 0 4vw;
     /* padding: 20px 0; */
-    height: 100%;
 }

@@ -210,7 +210,10 @@ function Snippet() {
           )
         }
         {displayScores ? (
-          <Popup snippet={snippet.id}/>
+          <Popup 
+          snippet={snippet.id}
+          show={true}
+          />
         ):
         (
           <div></div>

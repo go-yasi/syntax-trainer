@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import { CopyBlock, dracula, nord } from "react-code-blocks";
 import Timer from "../components/Timer";
+import Popup from "../components/Popup";
 import "./snippet.css";
 
 
@@ -12,6 +13,7 @@ function Snippet() {
     const [testSnippet, setTestSnippet] = useState("");
     const [theme, setTheme] = useState(0);
     const [game, setGame] = useState(true);
+    const [displayScores, setDisplayScores] = useState(false);
     const [started, setStarted] = useState(false);
     const [errors, setErrors] = useState(0);
     //let errors = 0;
@@ -99,7 +101,7 @@ function Snippet() {
     }
 
     function scored(errors , timeTotal , timeLeft){
-        let score = Math.floor( timeLeft*100/timeTotal - errors);
+        let score = Math.floor( timeLeft*1000/timeTotal - errors);
         console.log(score);
         let sc = {
           "value": score,
@@ -110,6 +112,7 @@ function Snippet() {
         API.saveScore(sc)
       .then(res =>{
           console.log(res)
+          setDisplayScores(true);
       })
       .catch(err => console.log(err));
     }
@@ -206,6 +209,12 @@ function Snippet() {
             <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
           )
         }
+        {displayScores ? (
+          <Popup snippet={snippet.id}/>
+        ):
+        (
+          <div></div>
+        )}
       </div>
       
     </div>

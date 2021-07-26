@@ -1,7 +1,6 @@
 import React, { useEffect, useState, Component } from "react";
 import API from "../utils/API";
 import CollectionCard from "../components/CollectionCard";
-import Popup from "../components/Popup";
 import "./home.css";
 
 function Home() {
@@ -29,7 +28,6 @@ function Home() {
     return (
         <div className="homepage full-page">
             <h1>Hello World! You're Home</h1>
-            <Popup />
             <div className="home-collections">
               {!collections.length ? (
                 <h1 className="text-center">No Collections to Display</h1>

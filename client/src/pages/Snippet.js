@@ -160,7 +160,7 @@ function Snippet() {
 
 
   return (
-    <div className="snippet-page">
+    <div className="snippet-page full-page">
       <h1 className="snippet-header">The Snippet!</h1>
       <h3 className="snippet-name">{snippet.title}</h3>
       {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}

@@ -1,7 +1,7 @@
 /* COLLECTION PAGE STYLES */
 .collection-page {
     background-color: pink;
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;

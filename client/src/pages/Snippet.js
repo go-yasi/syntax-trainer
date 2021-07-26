@@ -156,50 +156,60 @@ function Snippet() {
     // }
 
 
-    return (
-        <div className="snippet-page">
-            <h1>The Snippet!</h1>
-            <h3>{snippet.title}</h3>
-            {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
-                
-            
+  return (
+    <div className="snippet-page">
+      <h1 className="snippet-header">The Snippet!</h1>
+      <h3 className="snippet-name">{snippet.title}</h3>
+      {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
+
+      <div className="game-block">
+        <CopyBlock
+          className="snippet-code"
+          text={snippet.code}
+          theme={dracula}
+          language={"javascript"}
+        />
+
+        <textarea 
+          className="snippet-text"
+          name="testSnippet" 
+          placeholder={"code here"} 
+          onChange={handleInputChange} 
+          onKeyDown={tab} 
+          id="textArea">
+        </textarea>
+      </div>
+
+      <div className="result-block">
+        {theme === 1 ? 
+          (
             <CopyBlock
-            text={snippet.code}
+            className="snippet-result"
+            text={testSnippet}
+            theme={nord}
+            language={"javascript"}
+            />       
+          ):
+          (
+            <CopyBlock
+            text={testSnippet}
             theme={dracula}
             language={"javascript"}
-            //showLineNumbers={true}
-            />
-             <textarea name="testSnippet" placeholder={"code here"} onChange={handleInputChange} onKeyDown={tab} id="textArea"></textarea>
-            
-            {theme === 1 ? 
-                (
-                    <CopyBlock
-                        text={testSnippet}
-                        theme={nord}
-                        language={"javascript"}
-                    />       
-                ):
-                (
-                    <CopyBlock
-                        text={testSnippet}
-                        theme={dracula}
-                        language={"javascript"}
-                    />       
-                )}
-
-                {!started ? 
-                (
-                    <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
-                ):
-                (
-                    <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
-                )
-                }
-                   
-                    {/* <Timer /> */}
-
-        </div>
-    );
+            />       
+          )
+        }
+        {!started ? 
+          (
+            <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
+          ):
+          (
+            <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
+          )
+        }
+      </div>
+      
+    </div>
+  );
 }
 
 export default Snippet;

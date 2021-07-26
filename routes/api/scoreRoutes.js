@@ -41,7 +41,8 @@ router.get('/user/:id', async (req, res) => {
             `SELECT user.username, score.value, score.snippet_id, snippet.title FROM snippet
             INNER JOIN score ON snippet.id=score.snippet_id
             INNER JOIN user ON score.user_id=user.id
-            WHERE user.id = ?`,
+            WHERE user.id = ?
+            ORDER BY value DESC`,
             {
               replacements: [req.params.id],
               type: QueryTypes.SELECT
@@ -61,7 +62,8 @@ router.get('/user/:id', async (req, res) => {
             `SELECT user.username, score.value, score.snippet_id, snippet.title FROM snippet
             INNER JOIN score ON snippet.id=score.snippet_id
             INNER JOIN user ON score.user_id=user.id
-            WHERE snippet.id = ?`,
+            WHERE snippet.id = ?
+            ORDER BY value DESC`,
             {
               replacements: [req.params.id],
               type: QueryTypes.SELECT

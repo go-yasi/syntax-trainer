@@ -1,5 +1,7 @@
 /* LOGIN PAGE STYLES */
 
 .login-page {
-    background-color: rgb(102, 182, 214);
+    /* background-color: rgb(102, 182, 214); */
+    min-height: 90vh;
+    padding-bottom: 200px;
 }

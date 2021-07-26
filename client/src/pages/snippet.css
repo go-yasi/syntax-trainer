@@ -1,3 +1,59 @@
+/* SNIPPET PAGE STYLES */
+
+/* set page height */
 .snippet-page {
-    height: 90vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 300px;
+}
+
+/* hide copy button */
+.kvndSo, .iTVelk {
+    display: none !important;
+}
+
+/* text area overlay */
+.game-block, .result-block {
+    width: 75vw;
+    position: relative;
+}
+
+.snippet-code, .snippet-text {
+    width: 100%;
+    /* position:absolute;
+    top: 0; */
+}
+.dXPJXg {
+    padding: 0 !important;
+    line-height: 1.4 !important;
+    font-size: 14px;
+    letter-spacing: .1em;
+}
+.snippet-code {
+    z-index: 10;
+}
+.snippet-text {
+    z-index: 20;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0.25rem;
+    padding: 2px 4px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    color: transparent;
+    word-wrap: break-word;
+    border-radius: 3px;
+    display: inline;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    padding: 2px 4px;
+    font-size: 14px;
+    caret-color: white !important;
+    caret-shape: block;
+    letter-spacing: .1em;
 }

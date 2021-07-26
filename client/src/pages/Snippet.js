@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import { CopyBlock, dracula, nord } from "react-code-blocks";
 import Timer from "../components/Timer";
+import Popup from "../components/Popup";
 import "./snippet.css";
 
 
@@ -12,6 +13,7 @@ function Snippet() {
     const [testSnippet, setTestSnippet] = useState("");
     const [theme, setTheme] = useState(0);
     const [game, setGame] = useState(true);
+    const [displayScores, setDisplayScores] = useState(false);
     const [started, setStarted] = useState(false);
     const [errors, setErrors] = useState(0);
     //let errors = 0;
@@ -99,7 +101,7 @@ function Snippet() {
     }
 
     function scored(errors , timeTotal , timeLeft){
-        let score = Math.floor( timeLeft*100/timeTotal - errors);
+        let score = Math.floor( timeLeft*1000/timeTotal - errors);
         console.log(score);
         let sc = {
           "value": score,
@@ -110,6 +112,7 @@ function Snippet() {
         API.saveScore(sc)
       .then(res =>{
           console.log(res)
+          setDisplayScores(true);
       })
       .catch(err => console.log(err));
     }
@@ -156,50 +159,66 @@ function Snippet() {
     // }
 
 
-    return (
-        <div className="snippet-page">
-            <h1>The Snippet!</h1>
-            <h3>{snippet.title}</h3>
-            {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
-                
-            
+  return (
+    <div className="snippet-page full-page">
+      <h1 className="snippet-header">The Snippet!</h1>
+      <h3 className="snippet-name">{snippet.title}</h3>
+      {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
+
+      <div className="game-block">
+        <CopyBlock
+          className="snippet-code"
+          text={snippet.code}
+          theme={dracula}
+          language={"javascript"}
+        />
+
+        <textarea 
+          className="snippet-text"
+          name="testSnippet" 
+          placeholder={"code here"} 
+          onChange={handleInputChange} 
+          onKeyDown={tab} 
+          id="textArea">
+        </textarea>
+      </div>
+
+      <div className="result-block">
+        {theme === 1 ? 
+          (
             <CopyBlock
-            text={snippet.code}
+            className="snippet-result"
+            text={testSnippet}
+            theme={nord}
+            language={"javascript"}
+            />       
+          ):
+          (
+            <CopyBlock
+            text={testSnippet}
             theme={dracula}
             language={"javascript"}
-            //showLineNumbers={true}
-            />
-             <textarea name="testSnippet" placeholder={"code here"} onChange={handleInputChange} onKeyDown={tab} id="textArea"></textarea>
-            
-            {theme === 1 ? 
-                (
-                    <CopyBlock
-                        text={testSnippet}
-                        theme={nord}
-                        language={"javascript"}
-                    />       
-                ):
-                (
-                    <CopyBlock
-                        text={testSnippet}
-                        theme={dracula}
-                        language={"javascript"}
-                    />       
-                )}
-
-                {!started ? 
-                (
-                    <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
-                ):
-                (
-                    <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
-                )
-                }
-                   
-                    {/* <Timer /> */}
-
-        </div>
-    );
+            />       
+          )
+        }
+        {!started ? 
+          (
+            <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
+          ):
+          (
+            <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
+          )
+        }
+        {displayScores ? (
+          <Popup snippet={snippet.id}/>
+        ):
+        (
+          <div></div>
+        )}
+      </div>
+      
+    </div>
+  );
 }
 
 export default Snippet;

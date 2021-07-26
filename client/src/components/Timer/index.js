@@ -66,10 +66,10 @@ class Timer extends React.Component {
       }
   }
 
-  score(errors , timeTotal , timeLeft){
-    let score = Math.floor( timeLeft*100/timeTotal - errors);
-    console.log(score);
-}
+//   score(errors , timeTotal , timeLeft){
+//     let score = Math.floor( timeLeft*100/timeTotal - errors);
+//     console.log(score);
+// }
 
   render() {
     let start = (this.state.time == 0) ?

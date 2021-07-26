@@ -81,6 +81,7 @@ function Popup(props) {
                     />
                 ):(<p></p>)}
 
+
                 {scores.length > 4 ? 
                 (
                     <HighScoreCard
@@ -92,7 +93,7 @@ function Popup(props) {
                 
             </Modal.Body>
         )}
-        
+
 
         <Modal.Footer className="popup-footer">
             <Button variant="secondary">Close</Button>

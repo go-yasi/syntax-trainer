@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import SnippetForm from "./components/SnippetForm";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -37,6 +38,7 @@ function App() {
           <Route path="/snippet/:id" component={Snippet} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <PrivateRoute exact path="/snippetform" component={SnippetForm} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
         <Footer />

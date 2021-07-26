@@ -13,6 +13,8 @@ function Snippet() {
     const [theme, setTheme] = useState(0);
     const [game, setGame] = useState(true);
     const [started, setStarted] = useState(false);
+    const [errors, setErrors] = useState(0);
+    //let errors = 0;
     //  const [timer, setTimer] = useState({
     //      time:-1,
     //      on:true
@@ -77,11 +79,13 @@ function Snippet() {
             // setTimer({...timer, on:false});
             setGame(false);
             console.log("doneso");
+            //console.log(React.findDOMNode(this.refs.time).value);
           }
         //setTestSnippet({...testSnippet, code:value});
           if(snippet.code.indexOf(testSnippet)){
             console.log("errrrrr");
             setTheme(1);
+            setErrors(errors+1);
           }else{
             setTheme(0);
           }
@@ -93,6 +97,23 @@ function Snippet() {
             console.log("tab"); 
         }     
     }
+
+    function scored(errors , timeTotal , timeLeft){
+        let score = Math.floor( timeLeft*100/timeTotal - errors);
+        console.log(score);
+        let sc = {
+          "value": score,
+          "snippet_id": snippet.id,
+          "user_id": 5 
+        };
+      console.log(sc);
+        API.saveScore(sc)
+      .then(res =>{
+          console.log(res)
+      })
+      .catch(err => console.log(err));
+    }
+    // scored(1, 10, 9);
 
     // var secondsLeft = timer.time;
     // function setTime() {
@@ -168,13 +189,13 @@ function Snippet() {
 
                 {!started ? 
                 (
-                    <h3>time: {150}</h3>
+                    <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
                 ):
                 (
-                    <Timer length={150} game={game}/>
+                    <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
                 )
                 }
-                    
+                   
                     {/* <Timer /> */}
 
         </div>

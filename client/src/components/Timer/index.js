@@ -19,11 +19,12 @@ class Timer extends React.Component {
   }
   componentWillReceiveProps(nextProps){
     console.log('componentWillReceiveProps', nextProps);
-    
+
     if (this.props !== nextProps && this.state.game) {
         this.setState({game: nextProps.game}, ()=>{
             if(!this.state.game){
                 this.stopTimer();
+                nextProps.scored(nextProps.errors, nextProps.length, this.state.time);
             }
         } );
         
@@ -38,15 +39,20 @@ class Timer extends React.Component {
       game: this.state.game,
     })
     console.log(this.state.game);
-    this.timer = setInterval(() => 
-        this.setState({
-        time: this.state.time - 1
-    }), 1000);
+    this.timer = setInterval(() =>
+        { 
+            this.setState({
+            time: this.state.time - 1
+        })
+        if(this.state.time < 1){
+            clearInterval(this.timer);
+        }
+    }, 1000);
   }
   stopTimer() {
     this.setState({isOn: false})
     console.log(this.state.game);
-    clearInterval(this.timer)
+    clearInterval(this.timer);
   }
   resetTimer() {
     this.setState({time: 0, isOn: false})
@@ -59,6 +65,11 @@ class Timer extends React.Component {
           
       }
   }
+
+  score(errors , timeTotal , timeLeft){
+    let score = Math.floor( timeLeft*100/timeTotal - errors);
+    console.log(score);
+}
 
   render() {
     let start = (this.state.time == 0) ?
@@ -75,11 +86,11 @@ class Timer extends React.Component {
       <button onClick={this.resetTimer} id="resetBtn">reset</button>
     return(
       <div>
-        <h3>timer: {this.state.time}</h3>
-        {start}
+        <h3>timer: <p ref ="time">{this.state.time} </p></h3>
+        {/* {start}
         {resume}
         {stop}
-        {reset}
+        {reset} */}
       </div>
     )
   }

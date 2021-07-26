@@ -99,11 +99,11 @@ function Snippet() {
             console.log("tab"); 
         }     
     }
-
+    var sc;
     function scored(errors , timeTotal , timeLeft){
         let score = Math.floor( timeLeft*1000/timeTotal - errors);
         console.log(score);
-        let sc = {
+        sc = {
           "value": score,
           "snippet_id": snippet.id,
           "user_id": 5 
@@ -210,7 +210,7 @@ function Snippet() {
           )
         }
         {displayScores ? (
-          <Popup snippet={snippet.id}/>
+          <Popup snippet={snippet.id} score={sc}/>
         ):
         (
           <div></div>

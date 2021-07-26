@@ -1,5 +1,13 @@
 /* COLLECTION PAGE STYLES */
-
+.collection-page {
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 200px;
+}
 .collection-snippets {
     display: flex;
     flex-wrap: wrap;

@@ -3,8 +3,8 @@ import { Link, useParams, useHistory } from "react-router-dom";
 import ProfileScoreCard from "../components/ProfileScoreCard";
 import UserCard from "../components/UserCard";
 import SnippetCard from "../components/SnippetCard";
-import API from "../utils/API"
-import "./profile.css"
+import API from "../utils/API";
+import "./profile.css";
 
 function Profile() {
     const [profile, setProfile] = useState({});
@@ -61,7 +61,10 @@ function Profile() {
                 <div className="profile-page-scorecard">
                     {score.length > 0 ? (
                         <div>
-                            <ProfileScoreCard snippet={score[0].title} value={score[0].value}/>
+                            <ProfileScoreCard 
+                            snippet={score[0].title} 
+                            value={score[0].value}
+                            />
                         </div>
                     ):(
                         <div>
@@ -89,7 +92,12 @@ function Profile() {
                 <h3>YOUR SNIPPETS</h3>
                 {profile.snippets ? (
                     <div> 
-                        <SnippetCard title={profile.snippets[0].title} language={profile.snippets[0].language} />
+                        <SnippetCard 
+                        title={profile.snippets[0].title} 
+                        language={profile.snippets[0].language} 
+                        key={profile.snippets.id}
+                        id={profile.snippets.id}
+                        />
                         {/* need mapping */}
                     </div>
                 ):(

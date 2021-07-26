@@ -57,10 +57,10 @@ p, a, input {
 * {
 	box-sizing: border-box;
 }
-
+/* 
 body {
 	background-color: skyblue;
-}
+} */
 
 /* BUTTONS */
 button {
@@ -347,4 +347,9 @@ button {
 }
 .l-s-cta {
 	font-size: 11px;
+}
+
+#root > div {
+	overflow: auto;
+	position: relative;
 }

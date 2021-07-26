@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
 import { CopyBlock, dracula, nord } from "react-code-blocks";
 import Timer from "../components/Timer";
+import "./snippet.css";
 
 
 
@@ -156,7 +157,7 @@ function Snippet() {
 
 
     return (
-        <div>
+        <div className="snippet-page">
             <h1>The Snippet!</h1>
             <h3>{snippet.title}</h3>
             {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}

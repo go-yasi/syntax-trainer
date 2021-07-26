@@ -78,7 +78,7 @@ function Nav() {
             onClick={handleLogout}
             className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
             >
-            Log out
+            Logout
             </Link>
             ) : (
             <Link

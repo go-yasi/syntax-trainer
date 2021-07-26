@@ -52,6 +52,21 @@ function Collection() {
                     );
                   })
               )}
+                            {!snippets.length ? (
+                <h1 className="text-center">No Collections to Display</h1>
+              ) : (
+                  snippets.map(snippet => {
+                    return (
+                      <SnippetCard
+                        title={snippet.title}
+                        language={snippet.language}
+                        description={snippet.description}
+                        key={snippet.id}
+                        id={snippet.id}
+                      />
+                    );
+                  })
+              )}
             </div>
 
             

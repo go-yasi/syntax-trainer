@@ -28,7 +28,7 @@ function Collection() {
       API.fetchCollection(id) 
       .then( res => {
         setCollection(res.data);
-        console.log("Collection: " + res.data);
+        console.log("Collection: ", res.data);
       })
       .catch(err => console.log(err));
     }

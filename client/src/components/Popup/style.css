@@ -1,4 +1,9 @@
 /* POPUP STYLES */
+.modal-title {
+    display: flex;
+    justify-content: center !important;
+    text-align: center !important;
+}
 .modal-footer {
     justify-content: space-between !important;
 }

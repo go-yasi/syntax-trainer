@@ -10,9 +10,9 @@
 }
 
 /* hide copy button */
-.kvndSo, .iTVelk {
+/* .kvndSo, .iTVelk {
     display: none !important;
-}
+} */
 
 /* text area overlay */
 .game-block, .result-block {
@@ -40,8 +40,8 @@
     border-color: transparent;
     border-radius: 0.25rem;
     padding: 2px 4px;
-    position: absolute;
-    top: 0;
+    /* position: absolute;
+    top: 0; */
     height: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     color: transparent;

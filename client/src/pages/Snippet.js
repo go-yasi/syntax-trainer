@@ -14,6 +14,7 @@ function Snippet() {
     const [theme, setTheme] = useState(0);
     const [game, setGame] = useState(true);
     const [displayScores, setDisplayScores] = useState(false);
+    const [currentScore, setCurrentScore] = useState({});
     const [started, setStarted] = useState(false);
     const [errors, setErrors] = useState(0);
     //let errors = 0;
@@ -22,6 +23,7 @@ function Snippet() {
     //      on:true
     //  });
     const {id} = useParams()
+    const user = JSON.parse(localStorage.getItem("user"));
 
     useEffect(() => {
         loadSnippets();
@@ -99,15 +101,22 @@ function Snippet() {
             console.log("tab"); 
         }     
     }
-
     function scored(errors , timeTotal , timeLeft){
         let score = Math.floor( timeLeft*1000/timeTotal - errors);
         console.log(score);
+        let userid;
+        if(user){
+          userid =user.id;
+        }else{
+          userid=1;
+        }
         let sc = {
           "value": score,
+          "snippet_title": snippet.title,
           "snippet_id": snippet.id,
-          "user_id": 5 
+          "user_id": userid
         };
+        setCurrentScore(sc);
       console.log(sc);
         API.saveScore(sc)
       .then(res =>{
@@ -116,47 +125,6 @@ function Snippet() {
       })
       .catch(err => console.log(err));
     }
-    // scored(1, 10, 9);
-
-    // var secondsLeft = timer.time;
-    // function setTime() {
-    //     // Sets interval in variable
-    //     timerInterval = setInterval(function() {
-    //     let gamestop = timer.on;
-    //       //var gameState = game;
-    //       secondsLeft--;
-    //       console.log(secondsLeft);
-    //       console.log(timer.on);
-    //       console.log(gamestop);
-
-
-    //       if(gamestop === true){
-    //           //console.log(timer.on);
-    //           //console.log("true");
-    //           //clearInterval(timerInterval);
-    //       } 
-    //       if(gamestop === false){
-    //         //console.log(timer.on);
-    //         //console.log("false");
-    //         clearInterval(timerInterval);
-    //     } 
-          
-    //       if(secondsLeft < 1) {
-    //           //setTimer({...timer, on:false});
-    //         // Stops execution of action at set interval
-    //           clearInterval(timerInterval);
-    //         // Calls function to create and append image
-    //           sendMessage();
-    //       }
-    //       setTimer({...timer, time:secondsLeft});
-  
-  
-    //     }, 1000);
-    //   }
-
-    // function sendMessage() {
-    //     console.log("times up");      
-    // }
 
 
   return (
@@ -206,13 +174,14 @@ function Snippet() {
             <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
           ):
           (
-            <Timer length={snippet.code.length} game={game} errors={errors} scored={scored}/>
+            <Timer length={snippet.code.length/155 + 10} game={game} errors={errors} scored={scored}/>
           )
         }
         {displayScores ? (
           <Popup 
           snippet={snippet.id}
           show={true}
+          score={currentScore}
           />
         ):
         (

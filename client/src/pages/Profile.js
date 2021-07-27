@@ -60,7 +60,8 @@ function Profile() {
                     )}
                 </div>
                 <div className="profile-page-scorecard">
-                    <h1 className="">HIGH SCORES</h1>
+                    <h1 className="sc-header">HIGH SCORES</h1>
+                    <div className="sc-info">
                     {score.length > 0 ? (
                         <div>
                             <ProfileScoreCard 
@@ -88,6 +89,7 @@ function Profile() {
                     ):(
                         <div></div>
                     )}
+                    </div>
                 </div>
             </div>
             <div className="profile-page-usersnippets">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import { Link, useParams } from "react-router-dom";
 import API from "../utils/API";
-import { CopyBlock, dracula, nord } from "react-code-blocks";
+import { CopyBlock, dracula, nord, far, googlecode, purebasic } from "react-code-blocks";
 import Timer from "../components/Timer";
 import Popup from "../components/Popup";
 import "./snippet.css";
@@ -181,7 +181,7 @@ function Snippet() {
             <CopyBlock
             className="snippet-result"
             text={testSnippet}
-            theme={nord}
+            theme={far}
             language={"javascript"}
             />       
           ):

@@ -1,13 +1,12 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 
 function UserCard(props) {
     return (
-    <div>
-      <h1>USER INFO</h1>
-      <h4>{props.avatar}</h4>
-      <h4>username: {props.username}</h4>
-      <h4>bio: {props.bio}</h4>
+    <div className="flexform user-card">
+      <h1 className="usercard-header">USER INFO</h1>
+      <p className="usercard-user">username: {props.username}</p>
+      <p className="usercard-bio">bio: {props.bio}</p>
     </div>
   );
 }

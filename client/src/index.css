@@ -53,6 +53,9 @@ h1, h2, h3 {
 p, a, input {
 	font-family: "Dogica";
 }
+input {
+	font-size: 14px;
+}
 
 /* SITEWIDE */
 * {
@@ -65,10 +68,10 @@ textarea {
 /* .full-page {
 	min-height: 90vh;
 } */
-/* 
+
 body {
 	background-color: skyblue;
-} */
+} 
 
 /* BUTTONS */
 button {

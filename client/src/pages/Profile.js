@@ -59,6 +59,7 @@ function Profile() {
                     )}
                 </div>
                 <div className="profile-page-scorecard">
+                    <h1 className="px-btn yellow-btn">HIGH SCORES</h1>
                     {score.length > 0 ? (
                         <div>
                             <ProfileScoreCard 
@@ -89,7 +90,7 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-page-usersnippets">
-                <h1 className="text-center">Your Snippets</h1>
+                <h1 className="text-center">YOUR SNIPPETS</h1>
             {!profile.snippets ? (
                 <h1 className="text-center">No Snippets to Display</h1>
               ) : (

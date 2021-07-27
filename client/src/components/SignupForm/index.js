@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API"
+import "./style.css";
 
 function SignupForm() {
 

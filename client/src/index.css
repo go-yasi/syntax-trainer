@@ -33,6 +33,12 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 	font-size: 14px;
 }
+select {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
 
 /* CUSTOM FONTS */
 @font-face {
@@ -53,6 +59,9 @@ h1, h2, h3 {
 p, a, input {
 	font-family: "Dogica";
 }
+input {
+	font-size: 14px;
+}
 
 /* SITEWIDE */
 * {
@@ -65,10 +74,10 @@ textarea {
 /* .full-page {
 	min-height: 90vh;
 } */
-/* 
+
 body {
 	background-color: skyblue;
-} */
+} 
 
 /* BUTTONS */
 button {

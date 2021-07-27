@@ -14,14 +14,26 @@
 
 .profile-page-usercard {
     border: 4px solid red;
-
+    padding: 2em 4em;
+    background-color: whitesmoke;
+    margin-top: 3vw;
 }
 
 .profile-page-scorecard {
     border: 4px solid green;
+    padding: 2em 4em;
+    background-color: whitesmoke;
+    margin-top: 3vw;
 }
 
 .profile-page-usersnippets {
     border: 4px solid blue;
-    width: 100%;
+    width: 80vw;
+    margin: 3vw auto 2vw;
+}
+
+.user-snippets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
 }

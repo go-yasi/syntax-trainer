@@ -1,0 +1,12 @@
+.create-snippet-page {
+    min-height: 90vh;
+    padding-bottom: 200px;
+}
+
+.snippet-form-block {
+    width: 65vw !important;
+}
+
+textarea.snip-code-input {
+    font-family: 'Dogica' !important;
+}

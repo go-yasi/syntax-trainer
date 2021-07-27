@@ -60,6 +60,7 @@ function Profile() {
                     )}
                 </div>
                 <div className="profile-page-scorecard">
+                    <h1 className="px-btn yellow-btn">HIGH SCORES</h1>
                     {score.length > 0 ? (
                         <div>
                             <ProfileScoreCard 
@@ -90,8 +91,11 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-page-usersnippets">
-                <h1 className="text-center">Your Snippets</h1>
-                <button className="blue-btn" onClick={gotoSnippetForm} id="create-snippet">Create Snippet</button>
+                <div className="user-snippets-header">
+                    <h1>YOUR SNIPPETS</h1>
+                    <button className="blue-btn" onClick={gotoSnippetForm} id="create-snippet">Create Snippet</button>
+                </div>
+                
             {!profile.snippets ? (
                 <h1 className="text-center">No Snippets to Display</h1>
               ) : (

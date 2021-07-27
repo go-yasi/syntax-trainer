@@ -131,9 +131,10 @@ function Snippet() {
   return (
     <div className="snippet-page full-page">
       <h1 className="snippet-name">{snippet.title}</h1>
-      <h3 className="snippet-name">{snippet.description}</h3>
+      <p className="snippet-name">{snippet.description}</p>
       {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
-
+      
+      <p className="snip-instructions">Click on the first code block and begin typing to start the timer! The block below will display the text you are typing. As you type, be sure to keep your eye on the colors — they will change if you make any errors!</p>
       <div className="game-block">
         <CopyBlock
           className="snippet-code"
@@ -145,7 +146,6 @@ function Snippet() {
         <textarea 
           className="snippet-text"
           name="testSnippet" 
-          placeholder={"code here"} 
           onChange={handleInputChange} 
           onKeyDown={tab} 
           id="textArea">

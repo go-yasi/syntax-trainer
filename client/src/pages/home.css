@@ -18,6 +18,7 @@
     max-width: 40vw;
     margin: 1vw auto;
     line-height: 1.4;
+	font-family: "Dogica";
 }
 
 .home-collections {
@@ -122,4 +123,15 @@
   .collection-card:nth-child(3) button:hover, .collection-card:nth-child(3) button:focus {
     background-color: #c260ff;
     cursor: pointer;
+  }
+
+
+  .Typewriter {
+	  max-width: 55vw;
+	  margin: 2vw auto;
+  }
+  .Typewriter__wrapper {
+	  margin-top: 1vw;
+	  font-family: 'Dogica' !important;
+	  line-height: 1.4;
   }

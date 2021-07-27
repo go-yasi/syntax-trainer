@@ -2,6 +2,7 @@ import React, { useEffect, useState, Component } from "react";
 import API from "../utils/API";
 import CollectionCard from "../components/CollectionCard";
 import "./home.css";
+import Typewriter from 'typewriter-effect';
 
 function Home() {
     const [collections, setCollections] = useState({});
@@ -29,7 +30,16 @@ function Home() {
         <div className="homepage full-page">
             <div className="home-intro">
               <h1 className="intro-header">Welcome to Syntax Trainer!</h1>
-              <p className="intro-paragraph">An interactive web application that helps you practice and refine your coding skills by typing commonly used code snippets</p>
+              <Typewriter
+              options={{
+                delay: 75
+              }}
+              className="intro-paragraph"
+                onInit={(typewriter) => {
+                  typewriter.typeString('An interactive web application that helps you practice and refine your coding skills by typing commonly used code snippets.')
+                    .start();
+                }}
+              />
             </div>
             <p className="collec-intro">Choose the language you would like to practice:</p>
             <div className="home-collections">

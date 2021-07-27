@@ -5,7 +5,7 @@ import { CopyBlock, dracula, nord } from "react-code-blocks";
 import Timer from "../components/Timer";
 import Popup from "../components/Popup";
 import "./snippet.css";
-
+import timer from "../assets/timer.gif";
 
 
 function Snippet() {
@@ -130,12 +130,35 @@ function Snippet() {
 
   return (
     <div className="snippet-page full-page">
-      <h1 className="snippet-name">{snippet.title}</h1>
-      <p className="snippet-name">{snippet.description}</p>
-      {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
-      
+
+      {/* <h1 className="snippet-name">{snippet.title}</h1> */}
+      {/* <p className="snippet-name">{snippet.description}</p> */}
+
+      <div className="instructions rd-b">
+      <h1 className="instructions-title">Instructions: </h1>
       <p className="snip-instructions">Click on the first code block and begin typing to start the timer! The block below will display the text you are typing. As you type, be sure to keep your eye on the colors — they will change if you make any errors!</p>
-      <div className="game-block">
+      </div>
+
+      <div className="countdown">
+      {/* <img className="hourglass-gif" src={timer} alt="hourglass gif"></img> */}
+        <div className="timer">
+        {!started ? 
+            (
+              <h3>TIMER:{snippet.code ? (snippet.code.length - snippet.code.length%5 + 5):(0)} </h3>
+            ):
+            (
+              <Timer 
+              length={snippet.code.length - snippet.code.length%5 + 5} 
+              game={game} 
+              errors={errors} 
+              scored={scored}/>
+            )
+          }
+        </div>
+      </div>
+     
+
+      <div className="game-block rd-b">
         <CopyBlock
           className="snippet-code"
           text={snippet.code}
@@ -152,7 +175,7 @@ function Snippet() {
         </textarea>
       </div>
 
-      <div className="result-block">
+      <div className="result-block rd-b">
         {theme === 1 ? 
           (
             <CopyBlock
@@ -170,14 +193,7 @@ function Snippet() {
             />       
           )
         }
-        {!started ? 
-          (
-            <h3>timer:{snippet.code ? (snippet.code.length - snippet.code.length%5 + 5):(0)} </h3>
-          ):
-          (
-            <Timer length={snippet.code.length - snippet.code.length%5 + 5} game={game} errors={errors} scored={scored}/>
-          )
-        }
+        
         {displayScores ? (
           <Popup 
           snippet={snippet.id}

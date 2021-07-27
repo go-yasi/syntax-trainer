@@ -27,11 +27,11 @@ function Home() {
 
     return (
         <div className="homepage full-page">
-            <div className="homepage-intro">
+            <div className="home-intro">
               <h1 className="intro-header">Welcome to Syntax Trainer!</h1>
-              <p className="intro-paragraph">an interactive web application that helps users practice and refine their coding skills by typing commonly used pieces of code. </p>
+              <p className="intro-paragraph">An interactive web application that helps you practice and refine your coding skills by typing commonly used code snippets</p>
             </div>
-            <h3>Choose the language you would like to practice:</h3>
+            <p className="collec-intro">Choose the language you would like to practice:</p>
             <div className="home-collections">
               
               {!collections.length ? (

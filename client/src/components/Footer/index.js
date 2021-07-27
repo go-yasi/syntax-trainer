@@ -11,7 +11,7 @@ function Footer() {
         <p className="footer-text">Developed by:</p>
         <p className="footer-text ft2">Joshua, Tai, Tom, and Yasi</p>
         <div className="glb">
-          <img className="star-gif" src={star} alt=""></img>
+          <img className="star-gif" src={star} alt="rotating star gif"></img>
           <Link
           className="github-link"
           to={{ pathname: "https://github.com/go-yasi/syntax-trainer" }} 
@@ -19,7 +19,7 @@ function Footer() {
           >
           See the GitHub Repo
           </Link>
-          <img className="star-gif" src={star} alt=""></img>
+          <img className="star-gif" src={star} alt="rotating star gif"></img>
         </div>
         
       </span>

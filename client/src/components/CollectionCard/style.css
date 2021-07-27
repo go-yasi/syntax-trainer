@@ -19,9 +19,6 @@
     font-size: 12px;
 }
 
-.collection-card:nth-child(1) button {
+.collection-card button {
     margin-top: 1em;
-    background-color: yellow !important;
 }
-
-

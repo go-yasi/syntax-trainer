@@ -1,9 +1,27 @@
 /* SNIPPET CARD STYLES */
 
 .snippet-card {
-    padding: 2em;
-    flex: 0 1 20vw;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    background-color: white;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; */
+    /* padding: 2em; */
+    /* flex: 0 1 20vw; */
+    /* margin-top: 2vw; */
+    /* margin-bottom: 2vw; */
+}
+.snippet-title {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: .5em;;
+}
+/* 
+.snippet-language {
+    margin: 1em auto;
+} */
+
+.snippet-desc {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.234;
 }

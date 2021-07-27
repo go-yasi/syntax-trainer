@@ -46,7 +46,7 @@ function Profile() {
     
     return (
         <div className="profile-page full-page">
-            <h1>Welcome to your profile, {profile.username}!</h1>
+            <h1 className="profile-welcome">Welcome to your profile, {profile.username}!</h1>
             <div className="profile-flex">
                 <div className="profile-page-usercard">
                     {profile.username ? (
@@ -60,7 +60,7 @@ function Profile() {
                     )}
                 </div>
                 <div className="profile-page-scorecard">
-                    <h1 className="px-btn yellow-btn">HIGH SCORES</h1>
+                    <h1 className="">HIGH SCORES</h1>
                     {score.length > 0 ? (
                         <div>
                             <ProfileScoreCard 
@@ -92,11 +92,11 @@ function Profile() {
             </div>
             <div className="profile-page-usersnippets">
                 <div className="user-snippets-header">
-                    <h1>YOUR SNIPPETS</h1>
+                    <h1 className="ursnip">YOUR SNIPPETS</h1>
                     <button className="blue-btn" onClick={gotoSnippetForm} id="create-snippet">Create Snippet</button>
                 </div>
-                
-            {!profile.snippets ? (
+                <div className="users-snippets">
+                {!profile.snippets ? (
                 <h1 className="text-center">No Snippets to Display</h1>
               ) : (
                 profile.snippets.map(snippet => {
@@ -111,6 +111,8 @@ function Profile() {
                     );
                   })
               )}
+                </div>
+            
             </div>
         </div>
     );

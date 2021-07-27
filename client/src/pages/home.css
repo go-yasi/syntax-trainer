@@ -1,8 +1,23 @@
 /* HOME PAGE */
 
 .homepage {
-    height: 90vh;
+    min-height: 95vh;
     padding-bottom: 200px;
+	background-image: url(../assets/clouds.jpg);
+	background-size: contain;
+}
+
+.home-intro {
+    padding: 10vw 0 8vw;
+    text-align: center;
+}
+.intro-header {
+	font-size: 22px;
+}
+.intro-paragraph {
+    max-width: 40vw;
+    margin: 1vw auto;
+    line-height: 1.4;
 }
 
 .home-collections {
@@ -13,3 +28,98 @@
     margin: 0 4vw;
     /* padding: 20px 0; */
 }
+.collec-intro {
+    text-align: center;
+    margin: 3vw auto 1vw;
+}
+
+/* PINK */
+.collection-card:nth-child(2) button {
+    color: white;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #e21677;
+	border-image-slice: 4;
+	border-image-width: 2;
+	border-image-outset: 0;
+	background-clip: padding-box;
+	border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23e21677' /></svg>");
+	position: relative;
+	background-color: #ee4f9a;
+	z-index: 99;
+}
+.collection-card:nth-child(2) button::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-box-shadow: inset -4px -4px #eb3089;
+			box-shadow: inset -4px -4px #eb3089
+}
+.collection-card:nth-child(2) button:hover,  .collection-card:nth-child(2) button:focus  {
+	background-color: #fa54a1;
+	cursor: pointer;
+}
+
+/* GREEN */
+.collection-card:nth-child(1) button {
+	color: #fff;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #187e19;
+	border-image-slice: 4;
+	border-image-width: 2;
+	border-image-outset: 0;
+	background-clip: padding-box;
+	border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23187e19' /></svg>");
+	position: relative;
+	background-color: #30c230;
+}
+.collection-card:nth-child(1) button::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-box-shadow: inset -4px -4px #1fa520;
+			box-shadow: inset -4px -4px #1fa520
+}
+.collection-card:nth-child(1) button:hover, .collection-card:nth-child(1) button:focus {
+	background-color: #3ed83e;
+	cursor: pointer;
+}
+
+/* PURPLE */
+.collection-card:nth-child(3) button {
+    color: white;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #991ce5;
+    border-image-slice: 4;
+    border-image-width: 2;
+    border-image-outset: 0;
+    background-clip: padding-box;
+    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23991ce5' /></svg>");
+    position: relative;
+    background-color: #b357eb;
+  }
+  .collection-card:nth-child(3) button::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: inset -4px -4px #a639e8;
+            box-shadow: inset -4px -4px #a639e8
+  }
+  .collection-card:nth-child(3) button:hover, .collection-card:nth-child(3) button:focus {
+    background-color: #c260ff;
+    cursor: pointer;
+  }

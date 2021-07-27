@@ -4,6 +4,34 @@
     justify-content: center !important;
     text-align: center !important;
 }
+
 .modal-footer {
     justify-content: space-between !important;
 }
+
+.urscore {
+    padding: .8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.your-score {
+    text-align: center;
+    border-bottom: 4px dotted;
+}
+
+.highscores {
+    /* border: 4px solid red; */
+    padding: 2em;
+    font-size: 18px;
+}
+
+.u-score {
+    text-align: center;
+    font-size: 22px;
+}
+.sparkle-gif {
+    padding-top: 1em;
+    width: 80px;
+}
+

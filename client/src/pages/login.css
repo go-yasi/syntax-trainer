@@ -4,4 +4,6 @@
     /* background-color: rgb(102, 182, 214); */
     min-height: 90vh;
     padding-bottom: 200px;
+    background-image: url(../assets/clouds.jpg);
+	background-size: contain;
 }

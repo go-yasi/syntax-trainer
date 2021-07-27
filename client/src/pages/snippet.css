@@ -10,15 +10,21 @@
 }
 
 /* hide copy button */
-/* .kvndSo, .iTVelk {
+.kvndSo, .iTVelk {
     display: none !important;
-} */
+}
 
+.instructions {
+    width: 60vw;
+    text-align: center;
+    margin: 2vw auto;
+}
 /* text area overlay */
 .game-block, .result-block {
     width: 75vw;
     position: relative;
 }
+
 
 .snippet-code, .snippet-text {
     width: 100%;
@@ -32,7 +38,7 @@
     line-height: 1.4 !important;
     font-size: 14px;
     letter-spacing: .1px;
-    font-weight: 400 !important;
+
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .snippet-code {
@@ -41,15 +47,13 @@
 
 /* textarea styles */
 .snippet-text {
-    font-weight: 400 !important;
     z-index: 20;
     background-color: transparent;
-    border-color: transparent;
-    border-radius: 0.25rem;
+    border: none !important;
     height: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    color: green;
-    word-wrap: break-word;
+    color: transparent;
+    /* word-wrap: break-word; */
     border-radius: 3px;
     display: inline;
     line-height: 1.428571428571428;
@@ -57,11 +61,54 @@
     white-space: pre-wrap;
     font-size: 14px;
     caret-color: white !important;
-    /* letter-spacing: .04px; */
-    overflow: hidden;
-    padding: 2px 4px;
+    padding: .8px 3px;
 }
 
 .result-block {
     margin-top: 1.68vw;
+}
+
+.modal-content {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #000;
+    border-image-slice: 4;
+    border-image-width: 2;
+    border-image-outset: 0;
+	background-clip: padding-box;
+    background-color: #282a36;
+    color: white !important;
+    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
+}
+
+.modal-footer {
+    border: none !important;
+}
+
+.instructions {
+    padding: 2em;
+    background-color: whitesmoke;
+}
+.hourglass-gif {
+    width: 40px;
+}
+.countdown {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;
+    width: 75vw;
+    margin-bottom: 1vw;
+}
+.timer {
+    background-color: rgb(231, 231, 231);
+    padding: 1em;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #000;
+    border-image-slice: 2;
+    border-image-width: 1;
+    border-image-outset: 0;
+	background-clip: padding-box;
+    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='lightgrey' /></svg>");
 }

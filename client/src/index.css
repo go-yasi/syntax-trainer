@@ -56,6 +56,11 @@ h1, h2, h3 {
 	font-family: 'Press Start 2P', monospace;
 	/* margin: .5em 0; */
 }
+h6 {
+	font-family: "Dogica-Bold";
+	text-transform: uppercase;
+	font-size: 14px;
+}
 p, a, input {
 	font-family: "Dogica";
 }
@@ -76,7 +81,7 @@ textarea {
 } */
 
 body {
-	background-color: skyblue;
+	background-color: #87ceeb;
 } 
 
 /* BUTTONS */
@@ -233,6 +238,64 @@ button {
 	background-color: #fa54a1;
 	cursor: pointer;
 }
+/* purple */
+.purple-btn {
+	color: white;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #991ce5;
+	border-image-slice: 4;
+	border-image-width: 2;
+	border-image-outset: 0;
+	background-clip: padding-box;
+	border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23991ce5' /></svg>");
+	position: relative;
+	background-color: #b357eb;
+  }
+  .purple-btn::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-box-shadow: inset -4px -4px #a639e8;
+			box-shadow: inset -4px -4px #a639e8
+  }
+  .purple-btn:hover, .purple-btn:focus {
+	background-color: #c260ff;
+	cursor: pointer;
+  }
+  /* orange */
+  .orange-btn {
+	color: white;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #f07709;
+	border-image-slice: 4;
+	border-image-width: 2;
+	border-image-outset: 0;
+	background-clip: padding-box;
+	border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23f07709' /></svg>");
+	position: relative;
+	background-color: #f99a44;
+  }
+  .orange-btn::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-box-shadow: inset -4px -4px #f78823;
+			box-shadow: inset -4px -4px #f78823
+  }
+  .orange-btn:hover, .orange-btn:focus {
+	background-color: #f99a44;
+	cursor: pointer;
+  }
 
 /* RECTANGULAR BORDER */
 .rc-b {

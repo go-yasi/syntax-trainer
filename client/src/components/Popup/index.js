@@ -4,6 +4,8 @@ import API from "../../utils/API.js"
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import HighScoreCard from "../HighScoreCard";
+import "./style.css";
+import sparkle from "../../assets/sparkle.gif";
 
 function Popup(props) {
     const [show, setShow] = useState(false);
@@ -62,21 +64,35 @@ function Popup(props) {
             onHide={() => setShow(false)}
             backdrop="static"
             keyboard={false}
+            
         >
             <Modal.Dialog
-
+            className="rd-b"
             >
-                <Modal.Header>
-                    <Modal.Title><h1 className="modal-title">High Scores</h1></Modal.Title>
-                </Modal.Header>
+                {/* <Modal.Header> */}
+                    {/* <Modal.Title><h1 className="modal-title">High Scores</h1></Modal.Title> */}
+                {/* </Modal.Header> */}
                 {!scores.length ?
                     (
                         <Modal.Body></Modal.Body>
                     ) : (
+                        
                         <Modal.Body>
+                            <div className="urscore">
+                                <h3 className="u-score">Your Score: {props.score.value}</h3>
+                                {/* <YourScoreCard
+                                className="user-new-score"
+                                value={props.score.value}
+                                /> */}
+                                <img className="sparkle-gif" src={sparkle} alt=""></img>
+                            </div>
+
+                            <div className="highscores">
+                            <h3 className="your-score high-scores">HIGH SCORES</h3>
                             {scores.length > 0 ?
                                 (
                                     <HighScoreCard
+                                    id="1ST"
                                         username={scores[0].username}
                                         title={scores[0].title}
                                         value={scores[0].value}
@@ -86,6 +102,7 @@ function Popup(props) {
                             {scores.length > 1 ?
                                 (
                                     <HighScoreCard
+                                    id="2ND"
                                         username={scores[1].username}
                                         title={scores[1].title}
                                         value={scores[1].value}
@@ -95,6 +112,7 @@ function Popup(props) {
                             {scores.length > 2 ?
                                 (
                                     <HighScoreCard
+                                    id="3RD"
                                         username={scores[2].username}
                                         title={scores[2].title}
                                         value={scores[2].value}
@@ -104,6 +122,7 @@ function Popup(props) {
                             {scores.length > 3 ?
                                 (
                                     <HighScoreCard
+                                    id="4TH"
                                         username={scores[3].username}
                                         title={scores[3].title}
                                         value={scores[3].value}
@@ -114,20 +133,17 @@ function Popup(props) {
                             {scores.length > 4 ?
                                 (
                                     <HighScoreCard
+                                    id="5TH"
                                         username={scores[4].username}
                                         title={scores[4].title}
                                         value={scores[4].value}
                                     />
                                 ) : (<p></p>)}
-
-                            <h3>Your Score</h3>
-                            <HighScoreCard
-                                username={user ? (user.username) : ("guest")}
-                                value={props.score.value}
-                            />
+                            </div>
+                            
+                            
                         </Modal.Body>
                     )}
-
 
                 <Modal.Footer className="popup-footer">
                     <Button className="pink-btn" variant="secondary" onClick={playAgain} >Play Again</Button>

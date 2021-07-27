@@ -35,7 +35,7 @@ function Collection() {
 
     return (
         <div className="collection-page full-page">
-            <h1>{collection.title} SNIPPETS</h1>
+            <h1 className="collection-title centered-text">{collection.title} SNIPPETS</h1>
             <div className="collection-snippets">
               {!snippets.length ? (
                 <h1 className="text-center">No Collections to Display</h1>
@@ -43,8 +43,9 @@ function Collection() {
                   snippets.map(snippet => {
                     return (
                       <SnippetCard
+                      className="col-snippet-card"
                         title={snippet.title}
-                        language={snippet.language}
+                        // language={snippet.language}
                         description={snippet.description}
                         key={snippet.id}
                         id={snippet.id}

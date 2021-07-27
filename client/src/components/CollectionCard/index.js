@@ -9,7 +9,7 @@ function CollectionCard(props) {
         <div className="collection-card flexform rd-b">
             <h2 className="collection-title">{props.title}</h2>
             <p className="collection-length">{props.length} Snippets</p>
-            <button to={"/collection/" + props.id} onClick={()=> history.push("/collection/" + props.id)} className="collection-btn ">START</button>
+            <button to={"/collection/" + props.id} onClick={()=> history.push("/collection/" + props.id)} className="collection-btn ">VIEW</button>
          </div>
     )
 };

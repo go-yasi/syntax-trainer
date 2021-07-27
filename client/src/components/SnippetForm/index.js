@@ -37,10 +37,10 @@ function SnippetForm() {
     };
 
     return (
-        <div>
-            <section className="login-block px-box rd-b-in">
+        <div className="create-snippet-page">
+            <section className="snippet-form-block px-box rd-b-in">
                 {/* <!-- Snippet Form --> */}
-                <form className="login-fm flexform" onSubmit={handleSubmit}>
+                <form className="snippet-fm flexform" onSubmit={handleSubmit}>
                     <h2 className="fm-header">Add Snippet</h2>
                     {/* <!-- Title --> */}
                     <div className="fm-group">
@@ -55,7 +55,7 @@ function SnippetForm() {
                     {/* <!-- Code --> */}
                     <div className="fm-group">
                         <label className="fm-label" for="description"></label>
-                        <textarea className="fm-input" type="text" id="code" placeholder="code" onChange={e => setCode(e.target.value)}></textarea>
+                        <textarea className="fm-input snip-code-input" type="text" placeholder="paste your snippet here" onChange={e => setCode(e.target.value)}></textarea>
                     </div>
                     {/* <!-- Language --> */}
                     <div className="fm-group">
@@ -71,10 +71,9 @@ function SnippetForm() {
                     <div className="fm-group">
                         <button className="blue-btn submit-button" type="submit">SUBMIT</button>
                     </div>
-                    
                 </form>
             </section>
-        </div>          
+        </div> 
     );
 };
 

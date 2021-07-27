@@ -114,7 +114,8 @@ function Snippet() {
           "value": score,
           "snippet_title": snippet.title,
           "snippet_id": snippet.id,
-          "user_id": userid
+          "user_id": userid,
+          "collection_id":snippet.collection_id
         };
         setCurrentScore(sc);
       console.log(sc);
@@ -129,10 +130,11 @@ function Snippet() {
 
   return (
     <div className="snippet-page full-page">
-      <h1 className="snippet-header">The Snippet!</h1>
-      <h3 className="snippet-name">{snippet.title}</h3>
+      <h1 className="snippet-name">{snippet.title}</h1>
+      <p className="snippet-name">{snippet.description}</p>
       {/* {timer < 0 ? (<h3>times up</h3>): (<h3>time: {timer.time}</h3>)} */}
-
+      
+      <p className="snip-instructions">Click on the first code block and begin typing to start the timer! The block below will display the text you are typing. As you type, be sure to keep your eye on the colors — they will change if you make any errors!</p>
       <div className="game-block">
         <CopyBlock
           className="snippet-code"
@@ -144,7 +146,6 @@ function Snippet() {
         <textarea 
           className="snippet-text"
           name="testSnippet" 
-          placeholder={"code here"} 
           onChange={handleInputChange} 
           onKeyDown={tab} 
           id="textArea">
@@ -171,10 +172,10 @@ function Snippet() {
         }
         {!started ? 
           (
-            <h3>timer:{snippet.code ? (snippet.code.length):(0)} </h3>
+            <h3>timer:{snippet.code ? (snippet.code.length - snippet.code.length%5 + 5):(0)} </h3>
           ):
           (
-            <Timer length={snippet.code.length/155 + 10} game={game} errors={errors} scored={scored}/>
+            <Timer length={snippet.code.length - snippet.code.length%5 + 5} game={game} errors={errors} scored={scored}/>
           )
         }
         {displayScores ? (

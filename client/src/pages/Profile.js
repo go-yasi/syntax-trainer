@@ -11,6 +11,7 @@ function Profile() {
     const [score, setScore] = useState({});
     const {id} = useParams();
     let history = useHistory();
+    const gotoSnippetForm = () =>{ history.push('/snippetform')};
 
     useEffect(() => {
         loadProfile();
@@ -90,7 +91,11 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-page-usersnippets">
-                <h1 className="text-center">YOUR SNIPPETS</h1>
+                <div className="user-snippets-header">
+                    <h1>YOUR SNIPPETS</h1>
+                    <button className="blue-btn" onClick={gotoSnippetForm} id="create-snippet">Create Snippet</button>
+                </div>
+                
             {!profile.snippets ? (
                 <h1 className="text-center">No Snippets to Display</h1>
               ) : (

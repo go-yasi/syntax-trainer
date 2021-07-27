@@ -83,7 +83,7 @@ class Timer extends React.Component {
       <button onClick={this.resetTimer} id="resetBtn">reset</button>
     return(
       <div>
-        <h3>timer: <p ref ="time">{this.state.time} </p></h3>
+        <h3>TIMER:{this.state.time}</h3>
         {/* {start}
         {resume}
         {stop}

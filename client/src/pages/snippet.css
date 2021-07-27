@@ -22,38 +22,46 @@
 
 .snippet-code, .snippet-text {
     width: 100%;
-    /* position:absolute;
-    top: 0; */
+    position:absolute;
+    top: 0;
 }
+
+/* snippet block styles */
 .dXPJXg {
     padding: 0 !important;
     line-height: 1.4 !important;
     font-size: 14px;
-    letter-spacing: .1em;
+    letter-spacing: .1px;
+    font-weight: 400 !important;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .snippet-code {
     z-index: 10;
 }
+
+/* textarea styles */
 .snippet-text {
+    font-weight: 400 !important;
     z-index: 20;
     background-color: transparent;
     border-color: transparent;
     border-radius: 0.25rem;
-    padding: 2px 4px;
-    /* position: absolute;
-    top: 0; */
     height: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    color: transparent;
+    color: green;
     word-wrap: break-word;
     border-radius: 3px;
     display: inline;
-    line-height: 1.4;
+    line-height: 1.428571428571428;
     overflow-x: auto;
     white-space: pre-wrap;
-    padding: 2px 4px;
     font-size: 14px;
     caret-color: white !important;
-    caret-shape: block;
-    letter-spacing: .1em;
+    /* letter-spacing: .04px; */
+    overflow: hidden;
+    padding: 2px 4px;
+}
+
+.result-block {
+    margin-top: 1.68vw;
 }

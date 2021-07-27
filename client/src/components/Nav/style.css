@@ -5,7 +5,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
+    padding: 10px 0;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     background-color: whitesmoke;
@@ -21,4 +21,8 @@
 
 .nav-link {
     z-index: 99;
+}
+
+.syntax-trainer-logo {
+    width: 20vw;
 }

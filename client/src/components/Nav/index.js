@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import API from "../../utils/API"
+import logo from "../../assets/syntax-trainer-logo.png";
 import "./style.css";
 
 function Nav() {
@@ -51,7 +52,7 @@ function Nav() {
   return (
     <nav className="nav">
       <Link className="nav-logo" to="/">
-        Syntax Trainer
+      <img className="syntax-trainer-logo" src={logo} alt="colorful syntax trainer logo"></img>
       </Link>
       <div className="nav-list">
         <div className="nav-item nav-profile">
